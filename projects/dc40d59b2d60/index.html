@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家纺床上用品爆款情报看板 · 枕头 / 被子 / 套件 × 五平台 × 小红书</title>
+<meta name="description" content="家纺床上用品爆款情报可视化看板：五平台货盘格局、42 条爆款清单、小红书内容风向与卖点错位地图，页面每 60 秒自动回读数据文件。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&amp;family=Outfit:wght@500;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<link rel="stylesheet" href="assets/000_styles.css">
+<script src="assets/001_data-inline.js"></script>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ 顶部状态条：自动刷新核心 ============ -->
+  <div class="statusbar">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 py-2.5 flex flex-wrap items-center gap-2 sm:gap-3">
+      <div class="flex items-center gap-2 mr-1">
+        <span class="material-symbols-outlined" style="color:var(--terra);font-size:22px">bed</span>
+        <span class="font-bold text-[14.5px] tracking-tight hidden sm:inline">家纺爆款情报看板</span>
+      </div>
+
+      <span class="status-pill" id="pill-online" title="页面自动回读数据文件的运行状态">
+        <span class="dot" id="live-dot"></span><span id="live-text">自动回读运行中</span>
+      </span>
+
+      <span class="status-pill" title="数据文件版本"><span class="material-symbols-outlined" style="font-size:16px;color:var(--bronze)">database</span>
+        <span id="pill-version">v–</span>
+      </span>
+
+      <span class="status-pill" title="数据文件的最后更新时间"><span class="material-symbols-outlined" style="font-size:16px;color:var(--bronze)">update</span>
+        <span id="pill-updated">读取中…</span>
+      </span>
+
+      <span class="status-pill" title="距离下一次自动回读 data.json"><span class="material-symbols-outlined" style="font-size:16px;color:var(--olive)">timer</span>
+        下次刷新 <b id="pill-countdown" class="serif-num" style="color:var(--terra-dark)">–</b> 秒
+      </span>
+
+      <button class="btn btn-primary ml-auto" id="btn-refresh">
+        <span class="material-symbols-outlined" id="refresh-icon" style="font-size:17px">refresh</span>
+        <span id="refresh-label">立即刷新</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"><span class="material-symbols-outlined" style="font-size:18px">check_circle</span><span id="toast-text">数据已更新</span></div>
+
+  <!-- ============ Hero ============ -->
+  <header class="max-w-[1280px] mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-8">
+    <div class="grid lg:grid-cols-[1.55fr_1fr] gap-8 items-start">
+      <div class="reveal">
+        <div class="eyebrow mb-3">HOME TEXTILE · BESTSELLER INTELLIGENCE</div>
+        <h1 class="text-[clamp(28px,4.4vw,50px)] font-black leading-[1.16] mb-4">
+          家纺床上用品爆款情报<span class="hero-line">看板</span><br>
+          <span class="text-[clamp(18px,2.2vw,26px)] font-bold" style="color:var(--ink-2)">枕头 / 被子 / 套件 × 五平台货盘 × 小红书内容风向</span>
+        </h1>
+        <div class="hero-rule mb-5"></div>
+        <p class="text-[15.5px] leading-[1.85] mb-5" style="color:var(--ink-2);max-width:70ch">
+          <b style="color:var(--ink)">一句话结论：三个子品类跑在三套完全不同的爆款逻辑上。</b>
+          枕头是<b>命名权竞赛</b>（一超多追，寡头已成型）；被子是<b>季节 × 极端价格带双轨</b>（99 元以下与 339 元以上，几乎没有中间态）；
+          套件则是<b>参数通货膨胀后的美学与组合竞赛</b>（面料是入场券，花型是溢价源，套装是转化器）。
+        </p>
+        <div class="flex flex-wrap items-center gap-2.5">
+          <a class="btn btn-ink" id="hero-report" href="#" target="_blank" rel="noopener">
+            <span class="material-symbols-outlined" style="font-size:17px">description</span>飞书报告原文
+          </a>
+          <a class="btn btn-ghost" href="#list"><span class="material-symbols-outlined" style="font-size:17px">format_list_bulleted</span>直接看爆款清单</a>
+          <a class="btn btn-ghost" href="#refresh"><span class="material-symbols-outlined" style="font-size:17px">help</span>刷新机制说明</a>
+        </div>
+      </div>
+
+      <div class="card p-5 sm:p-6 reveal">
+        <div class="eyebrow mb-3">数据时点 · SNAPSHOT</div>
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div><div class="text-[13px]" style="color:var(--ink-3)">抓取日期</div><div class="text-[19px] font-bold serif-num" id="snap-capture">–</div></div>
+          <div><div class="text-[13px]" style="color:var(--ink-3)">数据版本</div><div class="text-[19px] font-bold serif-num" id="snap-version">–</div></div>
+          <div><div class="text-[13px]" style="color:var(--ink-3)">商品清单</div><div class="text-[19px] font-bold serif-num"><span id="snap-items">–</span> 条</div></div>
+          <div><div class="text-[13px]" style="color:var(--ink-3)">信息源</div><div class="text-[19px] font-bold serif-num"><span id="snap-sources">–</span> 个</div></div>
+        </div>
+        <hr class="hr-fade my-4">
+        <div class="flex gap-2.5 text-[13px]" style="color:var(--ink-2)">
+          <span class="material-symbols-outlined" style="font-size:18px;color:var(--terra)">sync</span>
+          <span id="snap-note">刷新说明读取中…</span>
+        </div>
+        <div class="mt-3 text-[13px]" style="color:var(--ink-3)">建议复核日期：<b id="snap-next" style="color:var(--ink-2)">–</b></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ KPI ============ -->
+  <section class="max-w-[1280px] mx-auto px-4 sm:px-6 pb-4" id="kpi-section">
+    <div class="flex items-end justify-between flex-wrap gap-3 mb-4 reveal">
+      <div>
+        <h2 class="section-title">大盘关键指标</h2>
+        <p class="section-desc mt-1">六张卡片全部可点击跳转来源页；数字为公开报告 / 第三方监控口径，非平台后台数据。</p>
+      </div>
+      <span class="tag tag-bronze"><span class="material-symbols-outlined" style="font-size:15px">open_in_new</span>点击卡片查看来源</span>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="kpi-grid"></div>
+  </section>
+
+  <!-- ============ 五平台货盘格局 ============ -->
+  <section class="max-w-[1280px] mx-auto px-4 sm:px-6 py-10" id="platforms">
+    <div class="mb-5 reveal">
+      <div class="eyebrow mb-2">01 · PLATFORM LANDSCAPE</div>
+      <h2 class="section-title">五平台货盘格局与数据可得性</h2>
+      <p class="section-desc mt-1.5">同一个品类在五个平台上是五套不同的货盘。右上角色彩标签代表<b>数据可得性</b>：绿=可直连官方页，黄=需第三方转述，红=仅能靠监控页推断。</p>
+    </div>
+    <div class="grid lg:grid-cols-[1.5fr_1fr] gap-4 items-start">
+      <div class="grid sm:grid-cols-2 gap-4" id="platform-grid"></div>
+      <div class="grid gap-4">
+        <div class="card p-5 reveal">
+          <h3 class="text-[16.5px] mb-1" id="priceband-title">价格带结构对比</h3>
+          <p class="text-[13px] mb-2" style="color:var(--ink-3)" id="priceband-sub">—</p>
+          <div class="chart chart-sm" id="chart-priceband"></div>
+          <div class="text-[13px] mt-2" style="color:var(--ink-3)">来源：<a id="priceband-src" href="#" target="_blank" rel="noopener">—</a></div>
+        </div>
+        <div class="card p-5 reveal">
+          <h3 class="text-[16.5px] mb-1">数据可得性速览</h3>
+          <p class="text-[13px] mb-3" style="color:var(--ink-3)">决定了每条热度信号该怎么引用：越靠左越可直接核验。</p>
+          <div class="grid gap-2" id="access-summary"></div>
+          <div class="notice mt-4 text-[13px]">
+            <span class="material-symbols-outlined" style="font-size:18px;vertical-align:-4px">block</span>
+            <b>天猫 / 淘宝、抖音、唯品会的实时后台销量抓不到</b>（登录墙 + 反爬）。本页对这三个平台只使用第三方榜单、监控页与媒体报道的替代口径，不同口径的销量不要放进同一张对比图。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 reveal">
+      <h3 class="text-[17.5px] mb-1">爆款生成的三条路径</h3>
+      <p class="section-desc mb-3">五个平台的爆款方法论可归为三条路径，选品与内容策划应按路径分开配置。</p>
+      <div class="grid md:grid-cols-3 gap-4" id="paths-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ 爆款清单主体 ============ -->
+  <section class="max-w-[1280px] mx-auto px-4 sm:px-6 py-10" id="list">
+    <div class="mb-5 reveal">
+      <div class="eyebrow mb-2">02 · BESTSELLER LIST</div>
+      <h2 class="section-title">三品类爆款清单</h2>
+      <p class="section-desc mt-1.5">按品类切换，支持平台多选筛选与关键词搜索（品牌 / 商品 / 规格 / 卖点全字段匹配）。带「重点关注」角标的是本轮最值得先看的款。</p>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-3 mb-5">
+      <div class="tabs" id="cat-tabs"></div>
+      <span class="text-[13px]" style="color:var(--ink-3)" id="cat-count">—</span>
+    </div>
+
+    <div id="cat-panel"></div>
+  </section>
+
+  <!-- ============ 小红书内容风向 ============ -->
+  <section class="max-w-[1280px] mx-auto px-4 sm:px-6 py-10" id="xhs">
+    <div class="mb-5 reveal">
+      <div class="eyebrow mb-2">03 · XIAOHONGSHU CONTENT</div>
+      <h2 class="section-title">小红书内容风向：流量不缺，缺的是承接</h2>
+      <p class="section-desc mt-1.5" id="xhs-note">—</p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-6" id="xhs-overview"></div>
+    <div class="grid lg:grid-cols-3 gap-4 mb-6" id="xhs-cats"></div>
+
+    <div class="grid lg:grid-cols-[1fr_1.35fr] gap-4 items-start">
+      <div class="card p-5 reveal">
+        <h3 class="text-[16.5px] mb-1" id="aw-title">用户关注权重</h3>
+        <p class="text-[13px] mb-1" style="color:var(--ink-3)" id="aw-sub">—</p>
+        <div class="chart" id="chart-attention"></div>
+        <p class="text-[13px] mt-1" style="color:var(--ink-2)" id="aw-note">—</p>
+      </div>
+      <div class="grid gap-4" id="xhs-signals"></div>
+    </div>
+  </section>
+
+  <!-- ============ 错位地图 ============ -->
+  <section class="max-w-[1280px] mx-auto px-4 sm:px-6 py-10" id="mismatch">
+    <div class="mb-5 reveal">
+      <div class="eyebrow mb-2">04 · MISMATCH MAP</div>
+      <h2 class="section-title" id="mm-title">错位地图</h2>
+      <p class="section-desc mt-1.5" id="mm-insight">—</p>
+    </div>
+    <div class="card overflow-hidden reveal">
+      <div class="overflow-x-auto">
+        <table class="tbl" id="mm-table" style="min-width:900px"></table>
+      </div>
+    </div>
+    <div class="mt-4 card p-5 reveal" id="mm-counter"></div>
+  </section>
+
+  <!-- ============ 落地动作 ============ -->
+  <section class="max-w-[1280px] mx-auto px-4 sm:px-6 py-10" id="actions">
+    <div class="mb-5 reveal">
+      <div class="eyebrow mb-2">05 · ACTION LIST</div>
+      <h2 class="section-title">优先级动作清单</h2>
+      <p class="section-desc mt-1.5">按优先级与时间窗排序：P0 为本月内必须落地，P1 为机制型调整，P2 为长期资产与风险监控。</p>
+    </div>
+    <div class="grid gap-3" id="action-list"></div>
+  </section>
+
+  <!-- ============ 刷新机制 + 数据口径 ============ -->
+  <section class="max-w-[1280px] mx-auto px-4 sm:px-6 py-10" id="refresh">
+    <div class="mb-5 reveal">
+      <div class="eyebrow mb-2">06 · REFRESH &amp; DATA CAVEATS</div>
+      <h2 class="section-title" id="rm-title">刷新机制说明与数据口径</h2>
+      <p class="section-desc mt-1.5">「实时刷新」在本页有严格定义，请务必看清三层含义，避免对外沟通时口径失真。</p>
+    </div>
+
+    <div class="notice mb-5 reveal" id="rm-honest">
+      <span class="material-symbols-outlined" style="font-size:19px;vertical-align:-4px">campaign</span>
+      <span id="rm-honest-text">—</span>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4 mb-7" id="rm-layers"></div>
+
+    <details class="acc reveal" open="">
+      <summary><span class="material-symbols-outlined" style="color:var(--terra);font-size:20px">rule</span>数据口径说明（引用前必读，共 <span id="cav-count">–</span> 条）<span class="material-symbols-outlined chev">expand_more</span></summary>
+      <div class="acc-body">
+        <div class="notice notice-ink mb-4" id="cav-headline">—</div>
+        <div class="grid md:grid-cols-2 gap-3" id="cav-list"></div>
+      </div>
+    </details>
+
+    <details class="acc reveal">
+      <summary><span class="material-symbols-outlined" style="color:var(--bronze);font-size:20px">link</span>链接层级说明（本页所有链接的五种类型）<span class="material-symbols-outlined chev">expand_more</span></summary>
+      <div class="acc-body">
+        <div class="overflow-x-auto">
+          <table class="tbl" id="tier-table" style="min-width:660px"></table>
+        </div>
+        <div class="notice mt-4" id="no-sku">—</div>
+      </div>
+    </details>
+
+    <details class="acc reveal">
+      <summary><span class="material-symbols-outlined" style="color:var(--olive);font-size:20px">settings</span>技术实现与自定义轮询间隔<span class="material-symbols-outlined chev">expand_more</span></summary>
+      <div class="acc-body">
+        <ul class="list-disc pl-5 space-y-1.5">
+          <li>数据请求：<code>fetch('./data.json?t=' + Date.now(), {cache:'no-store'})</code>，与本页同级，无跨域、无后端。</li>
+          <li>轮询间隔：默认 60 秒。在网址后加 <code>?refresh=30</code> 可改为 30 秒，最小 10 秒（低于 10 会被强制拉回 10）。</li>
+          <li>变化判定：以 <code>meta.updated_at</code> 为准。不同 → 整页重渲染 + 顶部「数据已更新」提示；相同 → 静默重置倒计时。</li>
+          <li>失败兜底：fetch 异常时状态条切换为「离线，使用上次数据」，页面继续显示上一次成功的数据，同时 <code>console.error</code> 输出原因，不会白屏。</li>
+          <li>数据文件生成：<code>build_data.py</code> 合并 <code>data-core.json</code> 与 <code>data-xhs.json</code> → <code>data.json</code>（同时生成本地打开用的兜底 <code>data-inline.js</code>）。</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ Footer ============ -->
+  <footer class="mt-8 border-t" style="border-color:var(--line);background:rgba(246,240,231,.6)">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 py-8 grid md:grid-cols-[1.4fr_1fr] gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined" style="color:var(--terra);font-size:21px">bed</span>
+          <b class="text-[15.5px]">家纺床上用品爆款情报看板</b>
+        </div>
+        <p class="text-[13px] mb-3" style="color:var(--ink-2);max-width:64ch">
+          枕头 / 被子 / 套件 三品类 × 天猫淘宝 / 京东 / 抖音 / 唯品会 / 产地批发 五平台货盘 × 小红书内容风向与卖点错位。
+          所有热度信号均为公开榜单、第三方监控与媒体报道的混合口径，不含任何平台后台经营数据。
+        </p>
+        <div class="flex flex-wrap gap-2 text-[13px]">
+          <span class="tag"><span class="material-symbols-outlined" style="font-size:15px">source</span>信息源 <b id="foot-sources">–</b> 个</span>
+          <span class="tag"><span class="material-symbols-outlined" style="font-size:15px">inventory_2</span>商品 <b id="foot-items">–</b> 条</span>
+          <span class="tag"><span class="material-symbols-outlined" style="font-size:15px">schedule</span>数据更新 <b id="foot-updated">–</b></span>
+          <span class="tag"><span class="material-symbols-outlined" style="font-size:15px">memory</span>本页渲染 <b id="foot-render">–</b></span>
+        </div>
+      </div>
+      <div class="md:text-right">
+        <a class="btn btn-primary mb-3" id="foot-report" href="#" target="_blank" rel="noopener">
+          <span class="material-symbols-outlined" style="font-size:17px">description</span>打开飞书报告原文
+        </a>
+        <p class="text-[13px]" style="color:var(--ink-3)">
+          制作：徐莉（家居行业运营）<br>
+          页面每 <b id="foot-interval">60</b> 秒自动回读 <code>data.json</code>；数据本体更新依赖研究任务重跑。
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="assets/002_app.js"></script>
+
+
+</body></html>
