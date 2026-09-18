@@ -1,0 +1,60 @@
+{
+  "total_videos": 20,
+  "total_consumption": 162245.47,
+  "ranges": {
+    "a3_rate": {
+      "min": 0.059262,
+      "max": 0.226071
+    },
+    "cpa3": {
+      "min": 0.059023,
+      "max": 0.309545
+    },
+    "visit_cost": {
+      "min": 2.558808,
+      "max": 19.942605
+    }
+  },
+  "brand_stats": {
+    "GEMO": {
+      "count": 7,
+      "consumption": 56023.22,
+      "a3_rate_min": 0.086142934,
+      "a3_rate_max": 0.107416369,
+      "cpa3_min": 0.242078096,
+      "cpa3_max": 0.309544821,
+      "visit_cost_min": 9.620732636,
+      "visit_cost_max": 19.94260536
+    },
+    "Seayeo": {
+      "count": 1,
+      "consumption": 6991.16,
+      "a3_rate_min": 0.059262034,
+      "a3_rate_max": 0.059262034,
+      "cpa3_min": 0.252561685,
+      "cpa3_max": 0.252561685,
+      "visit_cost_min": 7.989897143,
+      "visit_cost_max": 7.989897143
+    },
+    "ULIKE": {
+      "count": 7,
+      "consumption": 64669.51,
+      "a3_rate_min": 0.081647608,
+      "a3_rate_max": 0.117508267,
+      "cpa3_min": 0.131458054,
+      "cpa3_max": 0.235621465,
+      "visit_cost_min": 2.558807553,
+      "visit_cost_max": 4.744
+    },
+    "极萌": {
+      "count": 5,
+      "consumption": 34561.58,
+      "a3_rate_min": 0.16481841,
+      "a3_rate_max": 0.226070757,
+      "cpa3_min": 0.05902288,
+      "cpa3_max": 0.069988845,
+      "visit_cost_min": 4.440717949,
+      "visit_cost_max": 10.0700344
+    }
+  }
+}
