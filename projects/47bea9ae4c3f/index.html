@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2025 年双十一美容仪高消耗优质星图素材时间轴分析">
+  <title>2025 双十一美容仪｜高消耗优质素材时间轴</title>
+  <link rel="stylesheet" href="assets/000_styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <div class="brand-mark"><span>BEAUTY</span><b>11·11</b></div>
+        <div class="topbar-meta"><span class="dot"></span>星图优质素材复盘</div>
+      </nav>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">2025 DOUBLE 11 · BEAUTY DEVICE</div>
+          <h1>高消耗优质素材<br><em>时间轴拆解</em></h1>
+          <p>从预热蓄水、集中爆发到收尾长尾，逐条阅读入选视频页面，观察匿名达人结构、内容钩子与种草效率如何随节点迁移。</p>
+          <div class="read-complete"><span class="material-symbols-outlined">fact_check</span><strong><span id="heroReadCount">—</span>/<span id="heroReadTotal">—</span> 条有效素材已逐条打开并阅读页面</strong></div>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#timeline"><span class="material-symbols-outlined">timeline</span>进入时间轴</a>
+            <button class="ghost-btn" id="methodBtn"><span class="material-symbols-outlined">rule</span>查看口径</button>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-label">样本筛选</div>
+          <div class="formula"><span>优质素材</span><i>×</i><span>订单应收金额 Top 25%</span></div>
+          <div class="hero-number"><strong id="heroCount">—</strong><small>条入选素材</small></div>
+          <div class="date-band"><span id="dateStart">—</span><b>→</b><span id="dateEnd">—</span></div>
+          <div class="privacy-note"><span class="material-symbols-outlined">shield_lock</span>品牌 / 达人匿名，经营数据区间化展示</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="stat-grid" id="stats"></section>
+
+      <section class="section summary-section" id="coreSummary">
+        <div class="section-head">
+          <div><span class="section-kicker">EXECUTIVE TAKEAWAYS</span><h2>核心总结</h2></div>
+          <p>基于清洗后有效样本与页面可见证据</p>
+        </div>
+        <div class="summary-grid" id="summaryGrid"></div>
+        <div class="evidence-boundary" id="evidenceBoundary"></div>
+      </section>
+
+      <section class="section" id="timeline">
+        <div class="section-head">
+          <div><span class="section-kicker">CAMPAIGN RHYTHM</span><h2>双十一内容节奏时间轴</h2></div>
+          <p>点击阶段查看核心结论与全部素材</p>
+        </div>
+        <div class="timeline-visual" id="timelineVisual" aria-label="三阶段素材数量时间轴图"></div>
+        <div class="timeline-track" id="timelineTrack"></div>
+        <div class="phase-story" id="phaseStory"></div>
+      </section>
+
+      <section class="section insight-section">
+        <div class="section-head">
+          <div><span class="section-kicker">STRUCTURE SIGNALS</span><h2>高消耗素材结构信号</h2></div>
+          <p>达人层级、垂类标签与收入区间的组合观察</p>
+        </div>
+        <div class="insight-grid">
+          <article class="chart-card"><div class="card-title"><h3>达人粉丝量级</h3><span>按素材数</span></div><div class="bar-chart" id="followerChart"></div></article>
+          <article class="chart-card"><div class="card-title"><h3>达人标签 Top 8</h3><span>按素材数</span></div><div class="bar-chart coral" id="tagChart"></div></article>
+          <article class="chart-card conclusion-card"><div class="card-title"><h3>时间轴打法总结</h3><span>策略提炼</span></div><div id="strategySummary"></div></article>
+        </div>
+      </section>
+
+      <section class="section material-section">
+        <div class="section-head materials-head">
+          <div><span class="section-kicker">VIDEO-BY-VIDEO</span><h2>逐条视频分析</h2></div>
+          <div class="verified-pill"><span class="material-symbols-outlined">fact_check</span><b id="verifiedCount">—</b> / <b id="verifiedTotal">—</b> 条有效素材已逐条打开并阅读页面</div>
+        </div>
+        <div class="filter-panel">
+          <label class="search-box"><span class="material-symbols-outlined">search</span><input id="searchInput" placeholder="搜索素材编号、达人标签、粉丝量级…"></label>
+          <select id="phaseFilter" aria-label="筛选阶段"><option value="all">全部阶段</option></select>
+          <select id="followerFilter" aria-label="筛选粉丝量级"><option value="all">全部粉丝量级</option></select>
+          <select id="tagFilter" aria-label="筛选达人标签"><option value="all">全部达人标签</option></select>
+          <select id="statusFilter" aria-label="筛选阅读状态"><option value="all">全部阅读状态</option><option value="read">已逐条阅读</option></select>
+        </div>
+        <div class="result-meta"><span id="resultCount">—</span><button id="resetBtn">重置筛选</button></div>
+        <div class="material-grid" id="materialGrid"></div>
+        <div class="empty-state" id="emptyState"><span class="material-symbols-outlined">filter_alt_off</span><p>没有符合当前筛选的素材</p></div>
+      </section>
+
+      <section class="methodology" id="methodology">
+        <div><span class="section-kicker">METHODOLOGY</span><h2>分析口径与边界</h2></div>
+        <div class="method-grid" id="methodGrid"></div>
+      </section>
+    </main>
+
+    <footer><span>2025 双十一美容仪星图素材复盘</span><span>数据截至源表 · 内容核验于 2026-09-17</span></footer>
+  </div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close=""></div>
+    <div class="drawer-panel">
+      <button class="drawer-close" data-close="" aria-label="关闭"><span class="material-symbols-outlined">close</span></button>
+      <div id="drawerContent"></div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+  <script src="assets/001_app.js"></script>
+
+
+</body></html>
