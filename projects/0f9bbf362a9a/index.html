@@ -1,0 +1,545 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7月美容小电｜AD泛进店优质素材诊断</title>
+<style>
+  :root{
+    --bg:#F7F5F1;
+    --card:#FFFFFF;
+    --ink:#1A1A1A;
+    --ink-2:#4B4B4B;
+    --ink-3:#8A8580;
+    --line:#EEE9E1;
+    --pri:#C77B58;
+    --pri-2:#E4A385;
+    --gold:#B08A5B;
+    --pill:#F0E9E0;
+    --ok:#5B8C6E;
+    --warn:#D48A4E;
+    --shadow:0 10px 30px rgba(43,32,20,.06);
+    --shadow-hover:0 18px 40px rgba(43,32,20,.10);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1240px;margin:0 auto;padding:36px 28px 96px}
+  .header{padding:20px 0 8px}
+  .brand-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:#fff;border:1px solid var(--line);border-radius:99px;font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+  .brand-tag .dot{width:6px;height:6px;background:var(--pri);border-radius:50%}
+  h1{font-size:34px;line-height:1.25;margin:14px 0 6px;font-weight:700;letter-spacing:-.01em}
+  h1 .accent{color:var(--pri)}
+  .subtitle{color:var(--ink-3);font-size:15px;margin-bottom:22px}
+
+  /* 结论区 */
+  .conclusion{background:linear-gradient(135deg,#FFFDF9 0%,#FBEFE4 100%);border:1px solid var(--line);border-radius:20px;padding:28px 32px;margin-bottom:28px;box-shadow:var(--shadow)}
+  .conclusion h2{font-size:20px;margin:0 0 16px;display:flex;align-items:center;gap:10px}
+  .conclusion h2:before{content:"";width:4px;height:20px;background:var(--pri);border-radius:2px}
+  .concl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .concl-block{background:#fff;border-radius:14px;padding:18px 20px;border:1px solid var(--line)}
+  .concl-block h3{margin:0 0 10px;font-size:14px;color:var(--pri);letter-spacing:.05em;font-weight:600}
+  .concl-block ul{margin:0;padding-left:18px}
+  .concl-block li{font-size:13.5px;color:var(--ink-2);margin-bottom:6px;line-height:1.65}
+  .concl-block li b{color:var(--ink);font-weight:600}
+
+  /* 数据概览 */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+  .stat .label{font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+  .stat .value{font-size:22px;font-weight:700;margin-top:6px;color:var(--ink);white-space:nowrap}
+  .stat .value small{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:4px}
+  .stat .value.range{font-size:17px;letter-spacing:-.005em}
+  .stat .value .sep{color:var(--ink-3);font-weight:500;margin:0 4px}
+
+  /* Section title */
+  .section-title{display:flex;align-items:center;justify-content:space-between;margin:18px 0 16px}
+  .section-title h2{font-size:22px;margin:0}
+  .section-title .filters{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .chip{padding:7px 14px;border:1px solid var(--line);border-radius:99px;background:#fff;font-size:12.5px;color:var(--ink-2);cursor:pointer;transition:all .15s ease}
+  .chip:hover{border-color:var(--pri-2);color:var(--pri)}
+  .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  /* Grid of cards */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+  .cover{position:relative;aspect-ratio:9/12;overflow:hidden;background:linear-gradient(135deg,#EFE7DE,#DBCCB9)}
+  .cover img{width:100%;height:100%;object-fit:cover;display:block}
+  .cover .rank{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.62);color:#fff;font-size:13px;font-weight:700;padding:5px 10px;border-radius:99px;letter-spacing:.02em}
+  .cover .rank.top3{background:linear-gradient(90deg,#C77B58,#E4A385)}
+  .cover .brand-pill{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.94);color:var(--ink);font-size:12px;padding:5px 10px;border-radius:99px;font-weight:600;letter-spacing:.04em}
+  .cover .duration{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:3px 8px;border-radius:6px}
+  .card-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+  .card-title{font-size:14.5px;font-weight:600;line-height:1.5;color:var(--ink);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.6em}
+  .card-metrics{display:grid;grid-template-columns:1fr;gap:6px 10px;padding:10px 12px;background:#FBF7F1;border-radius:10px;margin-bottom:12px}
+  .metric{font-size:11.5px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .metric .k{color:var(--ink-3);white-space:nowrap}
+  .metric .v{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+  .metric .v.good{color:var(--ok)}
+  .metric .v.warn{color:var(--warn)}
+  .analysis-brief{font-size:12.5px;color:var(--ink-2);line-height:1.6;background:#F7F5F1;padding:10px 12px;border-radius:10px;margin-bottom:12px;border-left:3px solid var(--pri-2)}
+  .analysis-brief b{color:var(--pri);font-weight:600}
+  .tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px}
+  .tag{font-size:10.5px;padding:3px 8px;background:var(--pill);color:var(--gold);border-radius:99px;letter-spacing:.02em}
+  .card-actions{display:flex;gap:8px;margin-top:auto}
+  .btn{flex:1;text-align:center;padding:9px 12px;border-radius:10px;font-size:12.5px;font-weight:600;transition:all .15s ease;cursor:pointer;border:none}
+  .btn.primary{background:var(--ink);color:#fff}
+  .btn.primary:hover{background:var(--pri)}
+  .btn.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .btn.secondary:hover{border-color:var(--pri);color:var(--pri)}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+
+  /* Masked note tip */
+  .masked-tip{margin:8px 0 14px;padding:10px 14px;background:#F5F1EA;border-left:3px solid var(--gold);border-radius:8px;color:var(--ink-2);font-size:12.5px;line-height:1.6}
+  .masked-tip b{color:var(--gold)}
+
+  /* Modal */
+  .modal-mask{position:fixed;inset:0;background:rgba(20,15,10,.55);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+  .modal-mask.on{display:flex}
+  .modal{background:#fff;border-radius:20px;max-width:900px;width:100%;max-height:88vh;overflow-y:auto;padding:32px 36px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+  .modal .close{position:absolute;top:20px;right:24px;font-size:22px;color:var(--ink-3);cursor:pointer;background:none;border:none;padding:6px;line-height:1}
+  .modal .close:hover{color:var(--ink)}
+  .modal h3{font-size:22px;margin:0 0 6px}
+  .modal .meta{color:var(--ink-3);font-size:13px;margin-bottom:20px;line-height:1.7}
+  .modal-section{margin-bottom:22px}
+  .modal-section h4{font-size:14px;color:var(--pri);margin:0 0 10px;letter-spacing:.05em;font-weight:600;display:flex;align-items:center;gap:8px}
+  .modal-section h4:before{content:"";width:3px;height:14px;background:var(--pri);border-radius:2px}
+  .modal-section p, .modal-section li{font-size:13.5px;color:var(--ink-2);line-height:1.75;margin:6px 0}
+  .modal-section ul{padding-left:20px;margin:6px 0}
+  .modal-section .kv{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:13px}
+  .modal-section .kv .k{color:var(--ink-3);white-space:nowrap}
+  .modal-section .kv .v{color:var(--ink-2)}
+  .shots-list{display:flex;flex-direction:column;gap:10px}
+  .shot{display:grid;grid-template-columns:80px 1fr;gap:12px;padding:12px;background:#FBF7F1;border-radius:10px}
+  .shot .ts{font-size:12px;color:var(--pri);font-weight:600}
+  .shot .desc{font-size:13px;color:var(--ink-2);line-height:1.6}
+  .modal-actions{display:flex;gap:10px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+
+  footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);color:var(--ink-3);font-size:12.5px;text-align:center}
+  .warn-note{margin-top:14px;background:#FFF8EF;border:1px solid #F0E1CE;border-radius:10px;padding:12px 16px;font-size:12.5px;color:var(--gold);text-align:left;max-width:820px;margin-left:auto;margin-right:auto}
+  .warn-note b{color:#996A38}
+
+  @media (max-width:960px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .concl-grid{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:600px){
+    .grid{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr}
+    h1{font-size:26px}
+    .container{padding:22px 16px 60px}
+    .stat .value.range{font-size:15px}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <span class="brand-tag"><span class="dot"></span>2026-07｜美容小电｜AD泛进店</span>
+    <h1>7月美容小电 <span class="accent">AD泛进店</span> 优质素材诊断</h1>
+    <p class="subtitle">按「A3率 · CPA3 · 泛进店成本」三维综合排名，精选 <span id="subtitleCount">-</span> 条 Top 素材做逐条内容拆解</p>
+    <div class="masked-tip">
+      <b>🔒 数据脱敏说明：</b> 为便于对外分享，本报告全部单条指标 <b>不再展示具体数值</b>，统一呈现为样本池的 <b>区间范围（min ~ max）</b>；如需具体明细请回到内部千川平台核对。
+    </div>
+  </header>
+
+  <!-- 结论区 -->
+  <section class="conclusion">
+    <h2>🎯 核心结论</h2>
+    <div class="concl-grid">
+      <div class="concl-block">
+        <h3>品牌表现</h3>
+        <ul>
+          <li><b>ULIKE</b> 与 <b>GEMO</b> 为样本主力（两者合计占比最高），素材数量领先其他品牌</li>
+          <li><b>ULIKE</b> 泛进店成本处于样本区间低位、CPA3 同样偏低，投放效率整体最优</li>
+          <li><b>GEMO</b> A3率处于样本区间偏高档位，内容渗透力强；泛进店成本偏高档，需搭配站内路径优化</li>
+          <li><b>极萌</b>（黄金微雕仪）在样本内量级偏小、但内容化程度高，A3率处于样本高位、CPA3 处于样本低位，属于高效率增量素材</li>
+          <li><b>Seayeo</b> 样本量较少，单条 CPA3/A3率整体处于样本中位水平</li>
+        </ul>
+      </div>
+      <div class="concl-block">
+        <h3>素材共性</h3>
+        <ul>
+          <li>核心素材形式：<b>真人出镜 + 沉浸式vlog</b> + 功能测评 / 剧情演绎为主流</li>
+          <li>场景高度集中在 <b>居家护肤</b>（浴室 / 卧室 / 客厅），部分品牌加入职场、家庭情景剧</li>
+          <li>钩子多用「效果前置」→「产品拆解」→「使用演示」→「效果验证」四段式结构</li>
+          <li>核心卖点关键词：智能识别 · 分区护理 · 多部位适配（面部/唇部/身体）· 上妆服帖 · 皮贴骨</li>
+        </ul>
+      </div>
+      <div class="concl-block">
+        <h3>可复用打法</h3>
+        <ul>
+          <li>「黄黑皮 / 敏感肌 / 皮薄部位 / 抗衰」等 <b>肤质痛点</b> 直击型钩子表现效率处于样本高档</li>
+          <li>产品高价单件 → 通过「一机多用」演示放大性价比感知</li>
+          <li>结尾必带「上妆前后 / 素颜效果 / 情绪反差」对比，助力主动搜索 + 泛进店</li>
+          <li>泛进店成本处于样本低档的素材，以 <b>场景切片型日常 vlog</b> 与 <b>轻剧情演绎</b> 为主</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 数据概览 -->
+  <section class="stats" id="statsSection">
+    <div class="stat"><div class="label">诊断素材数</div><div class="value" id="totalCount">-</div></div>
+    <div class="stat"><div class="label">A3率区间</div><div class="value range" id="rangeA3">-</div></div>
+    <div class="stat"><div class="label">CPA3区间</div><div class="value range" id="rangeCpa3">-</div></div>
+    <div class="stat"><div class="label">泛进店成本区间</div><div class="value range" id="rangeVc">-</div></div>
+  </section>
+
+  <!-- 列表 -->
+  <div class="section-title">
+    <h2>📽️ 优质素材 · 逐条拆解</h2>
+    <div class="filters" id="filters">
+      <span class="chip on" data-brand="ALL">全部</span>
+    </div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="warn-note">
+    <b>⚠️ 重要提示：</b> 数据基于内部千川营销工具，仅供内部研判使用。本次交付版本已对具体数值指标做区间脱敏，对外使用前请务必核查并走对客 PR 审核流程。
+  </div>
+
+  <footer>
+    <div>数据源：内部飞书表格 · 视频结构分析：Coze 视频拆解 · 生成时间：2026-08-10</div>
+  </footer>
+</div>
+
+<!-- Modal -->
+<div class="modal-mask" id="modalMask">
+  <div class="modal" id="modal">
+    <button class="close" onclick="closeModal()">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+let VIDEOS = [];
+let SUMMARY = {};
+
+let DISPLAY_VIDEOS = [];
+let METRIC_CUTS = {};
+
+async function boot(){
+  const [dr, sr] = await Promise.all([
+    fetch('data.json').then(r=>r.json()),
+    fetch('summary.json').then(r=>r.json()),
+  ]);
+
+  // 全量样本（用于计算区间分桶，不直接展示具体值）
+  VIDEOS = Array.isArray(dr) ? dr.slice() : [];
+  SUMMARY = sr || {};
+
+  // 选择要展示的 Top 素材：按 score 排序，并确保「极萌 / GEMO」有一定数量露出
+  DISPLAY_VIDEOS = pickDisplayVideos(VIDEOS, 15, {
+    '极萌': 3,
+    'GEMO': 2,
+  });
+
+  // 为每个指标计算 4 档区间（四分位分桶），用于每条素材按区间脱敏展示
+  METRIC_CUTS = {
+    a3_rate: quantileCuts(VIDEOS.map(v=>v.a3_rate).filter(isFiniteNumber), 4),
+    cpa3: quantileCuts(VIDEOS.map(v=>v.cpa3).filter(isFiniteNumber), 4),
+    visit_cost: quantileCuts(VIDEOS.map(v=>v.visit_cost).filter(isFiniteNumber), 4),
+  };
+
+  renderStats();
+  renderFilters();
+  render('ALL');
+}
+
+function escapeHtml(s){
+  if(s==null) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function isFiniteNumber(n){
+  return typeof n === 'number' && Number.isFinite(n);
+}
+
+// 计算分位点切分（bins=4 表示四分位，返回长度 bins+1 的边界数组）
+function quantileCuts(values, bins){
+  const arr = (values||[]).filter(isFiniteNumber).slice().sort((a,b)=>a-b);
+  if(arr.length===0) return null;
+
+  const cuts = [];
+  for(let i=0;i<=bins;i++){
+    const p = i / bins;
+    const idx = Math.min(arr.length-1, Math.max(0, Math.round(p*(arr.length-1))));
+    cuts.push(arr[idx]);
+  }
+
+  // 去重（极端情况下很多值相同）
+  for(let j=1;j<cuts.length;j++){
+    if(cuts[j] < cuts[j-1]) cuts[j] = cuts[j-1];
+  }
+  return cuts;
+}
+
+// 根据 cuts 找到所在桶，并返回该桶对应的 [min,max]
+function bucketRange(value, cuts){
+  if(!isFiniteNumber(value) || !cuts || cuts.length<2) return null;
+  const last = cuts.length-1;
+  if(value <= cuts[0]) return {min: cuts[0], max: cuts[1]};
+  if(value >= cuts[last]) return {min: cuts[last-1], max: cuts[last]};
+
+  for(let i=0;i<last;i++){
+    const a = cuts[i], b = cuts[i+1];
+    if(value>=a && value<=b) return {min:a, max:b};
+  }
+  return {min: cuts[last-1], max: cuts[last]};
+}
+
+// 从全量样本中挑选展示集：先按 score 排序，再补齐指定品牌的最低数量
+function pickDisplayVideos(allVideos, topN, brandMinCount){
+  const sorted = (allVideos||[]).slice().sort((a,b)=>(b.score||0)-(a.score||0));
+  const picked = [];
+  const pickedIds = new Set();
+
+  function push(v){
+    if(!v) return;
+    const id = v.video_id || v.videoId || v.url;
+    if(pickedIds.has(id)) return;
+    picked.push(v);
+    pickedIds.add(id);
+  }
+
+  // 先按 TopN 收一轮
+  sorted.slice(0, topN).forEach(push);
+
+  // 再按品牌补齐（从高分往下补）
+  Object.keys(brandMinCount||{}).forEach(brand=>{
+    const need = brandMinCount[brand] || 0;
+    let cur = picked.filter(v=>v.brand===brand).length;
+    if(cur>=need) return;
+    for(const v of sorted){
+      if(v.brand!==brand) continue;
+      push(v);
+      cur++;
+      if(cur>=need) break;
+    }
+  });
+
+  // 超出则把低分且不属于“必须品牌”的素材剔除
+  const mustBrands = new Set(Object.keys(brandMinCount||{}));
+  if(picked.length>topN){
+    picked.sort((a,b)=>(b.score||0)-(a.score||0));
+    while(picked.length>topN){
+      // 找到一个最低分且非 must brand 的剔除项
+      let removeIdx = -1;
+      for(let i=picked.length-1;i>=0;i--){
+        if(!mustBrands.has(picked[i].brand)) { removeIdx = i; break; }
+      }
+      if(removeIdx===-1) removeIdx = picked.length-1;
+      const rv = picked.splice(removeIdx,1)[0];
+      pickedIds.delete(rv.video_id || rv.videoId || rv.url);
+    }
+  }
+
+  // 最终按 score 排序用于展示
+  return picked.sort((a,b)=>(b.score||0)-(a.score||0));
+}
+
+// 区间格式化
+function pctRange(r){
+  if(!r) return '-';
+  return (r.min*100).toFixed(2) + '% <span class="sep">~</span> ' + (r.max*100).toFixed(2) + '%';
+}
+function moneyRange(r){
+  if(!r) return '-';
+  return '¥' + r.min.toFixed(2) + ' <span class="sep">~</span> ¥' + r.max.toFixed(2);
+}
+// modal meta 里用纯文本区间
+function pctRangeText(r){
+  if(!r) return '-';
+  return (r.min*100).toFixed(2) + '% ~ ' + (r.max*100).toFixed(2) + '%';
+}
+function moneyRangeText(r){
+  if(!r) return '-';
+  return '¥' + r.min.toFixed(2) + ' ~ ¥' + r.max.toFixed(2);
+}
+
+function renderStats(){
+  const ranges = SUMMARY.ranges || {};
+  document.getElementById('totalCount').innerHTML = (DISPLAY_VIDEOS.length || SUMMARY.total_videos || VIDEOS.length) + '<small>条</small>';
+  document.getElementById('subtitleCount').textContent = (DISPLAY_VIDEOS.length || SUMMARY.total_videos || VIDEOS.length);
+  document.getElementById('rangeA3').innerHTML = pctRange(ranges.a3_rate);
+  document.getElementById('rangeCpa3').innerHTML = moneyRange(ranges.cpa3);
+  document.getElementById('rangeVc').innerHTML = moneyRange(ranges.visit_cost);
+}
+
+function renderFilters(){
+  const fc = document.getElementById('filters');
+  const brands = Array.from(new Set(DISPLAY_VIDEOS.map(v=>v.brand)));
+  brands.forEach(b=>{
+    const el = document.createElement('span');
+    el.className='chip';el.dataset.brand=b;el.textContent=b;
+    fc.appendChild(el);
+  });
+  fc.addEventListener('click', e=>{
+    if(e.target.classList.contains('chip')){
+      fc.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+      e.target.classList.add('on');
+      render(e.target.dataset.brand);
+    }
+  });
+}
+
+function render(brand){
+  const g = document.getElementById('grid');
+  g.innerHTML='';
+  const items = brand==='ALL' ? DISPLAY_VIDEOS : DISPLAY_VIDEOS.filter(v=>v.brand===brand);
+  items.forEach((v,idx)=>{
+    const globalRank = DISPLAY_VIDEOS.indexOf(v) + 1;
+    const a3r = bucketRange(v.a3_rate, METRIC_CUTS.a3_rate);
+    const cpa3r = bucketRange(v.cpa3, METRIC_CUTS.cpa3);
+    const vcr = bucketRange(v.visit_cost, METRIC_CUTS.visit_cost);
+    const rankClass = globalRank <= 3 ? 'top3' : '';
+    const analysis = v.analysis || {};
+    const overview = analysis.overview || {};
+    const product = analysis.product || {};
+    const creative = analysis.creative || {};
+    const factorsHtml = (analysis.engagementFactors||[]).slice(0,3).map(f=>`<span class="tag">${escapeHtml(f.factor)}</span>`).join('');
+    const briefTheme = overview.theme || product.productName || '';
+
+    const durMin = Math.floor((v.duration||0)/60);
+    const durSec = ((v.duration||0)%60).toFixed(0).padStart(2,'0');
+
+    const card = document.createElement('div');
+    card.className='card';
+    card.innerHTML = `
+      <div class="cover">
+        <img src="${escapeHtml(v.thumbnail_local||v.thumbnail)}" alt="cover" onerror="if(this.src!==this.dataset.fallback&&this.dataset.fallback){this.src=this.dataset.fallback}else{this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#EFE7DE,#DBCCB9)'}" data-fallback="${escapeHtml(v.thumbnail||'')}"/>
+        <span class="rank ${rankClass}">#${globalRank}</span>
+        <span class="brand-pill">${escapeHtml(v.brand)}</span>
+        ${v.duration?`<span class="duration">${durMin}:${durSec}</span>`:''}
+      </div>
+      <div class="card-body">
+        <div class="card-title" title="${escapeHtml(v.title)}">${escapeHtml(v.title)}</div>
+        <div class="card-metrics">
+          <div class="metric"><span class="k">A3率区间</span><span class="v good">${pctRange(a3r)}</span></div>
+          <div class="metric"><span class="k">CPA3区间</span><span class="v good">${moneyRange(cpa3r)}</span></div>
+          <div class="metric"><span class="k">泛进店成本区间</span><span class="v good">${moneyRange(vcr)}</span></div>
+        </div>
+        ${briefTheme?`<div class="analysis-brief"><b>📌 主题：</b>${escapeHtml(briefTheme)}</div>`:''}
+        ${factorsHtml?`<div class="tags">${factorsHtml}</div>`:''}
+        <div class="card-actions">
+          <a class="btn secondary" href="${escapeHtml(v.url)}" target="_blank" rel="noopener">📺 原视频</a>
+          <button class="btn primary" onclick='openModal(${DISPLAY_VIDEOS.indexOf(v)})'>查看结构</button>
+        </div>
+      </div>
+    `;
+    g.appendChild(card);
+  });
+}
+
+function openModal(i){
+  const v = DISPLAY_VIDEOS[i];
+  const a = v.analysis || {};
+  const overview = a.overview || {};
+  const product = a.product || {};
+  const style = a.style || {};
+  const creative = a.creative || {};
+  const contentPlan = a.contentPlan || {};
+  const shots = a.shots || [];
+  const factors = a.engagementFactors || [];
+  const dims = contentPlan.sellingPointDimensions || {};
+  const a3r = bucketRange(v.a3_rate, METRIC_CUTS.a3_rate);
+  const cpa3r = bucketRange(v.cpa3, METRIC_CUTS.cpa3);
+  const vcr = bucketRange(v.visit_cost, METRIC_CUTS.visit_cost);
+
+  const globalRank = i+1;
+
+  const html = `
+    <h3>#${globalRank} · ${escapeHtml(v.brand)} · ${escapeHtml(v.title)}</h3>
+    <div class="meta">
+      🔒 已脱敏 · 仅展示样本区间<br>
+      A3率区间 <b>${pctRangeText(a3r)}</b> · CPA3区间 <b>${moneyRangeText(cpa3r)}</b> · 泛进店成本区间 <b>${moneyRangeText(vcr)}</b>
+    </div>
+
+    ${overview.theme?`
+    <div class="modal-section">
+      <h4>视频主题 & 情感线</h4>
+      <p><b>主题：</b>${escapeHtml(overview.theme)}</p>
+      ${overview.plot?`<p><b>情节：</b>${escapeHtml(overview.plot)}</p>`:''}
+      ${overview.emotionalArc?`<p><b>情感线：</b>${escapeHtml(overview.emotionalArc)}</p>`:''}
+      ${overview.keyMoments?`<p><b>关键节点：</b></p><ul>${overview.keyMoments.map(m=>`<li>${escapeHtml(m)}</li>`).join('')}</ul>`:''}
+    </div>`:''}
+
+    ${creative.coreIdea?`
+    <div class="modal-section">
+      <h4>创意核心</h4>
+      <p><b>核心创意：</b>${escapeHtml(creative.coreIdea)}</p>
+      ${creative.executionMethod?`<p><b>执行方式：</b>${escapeHtml(creative.executionMethod)}</p>`:''}
+      ${creative.uniquePoints?`<p><b>差异化点：</b></p><ul>${creative.uniquePoints.map(u=>`<li>${escapeHtml(u)}</li>`).join('')}</ul>`:''}
+    </div>`:''}
+
+    ${product.productName?`
+    <div class="modal-section">
+      <h4>产品与卖点</h4>
+      <div class="kv">
+        <div class="k">产品</div><div class="v">${escapeHtml(product.productName)} · ${escapeHtml(product.productCategory||'')}</div>
+        ${product.targetAudience?`<div class="k">目标人群</div><div class="v">${escapeHtml(product.targetAudience)}</div>`:''}
+      </div>
+      ${product.sellingPoints?`<p><b>核心卖点：</b></p><ul>${product.sellingPoints.map(s=>`<li>${escapeHtml(s)}</li>`).join('')}</ul>`:''}
+      ${product.userPainPoints?`<p><b>用户痛点：</b></p><ul>${product.userPainPoints.map(p=>`<li>${escapeHtml(p.point||p)}</li>`).join('')}</ul>`:''}
+    </div>`:''}
+
+    ${(contentPlan.shootingScene||dims)?`
+    <div class="modal-section">
+      <h4>内容规划</h4>
+      <div class="kv">
+        ${contentPlan.shootingScene?`<div class="k">拍摄场景</div><div class="v">${escapeHtml(contentPlan.shootingScene)}</div>`:''}
+        ${contentPlan.presentationForm?`<div class="k">呈现形式</div><div class="v">${escapeHtml(contentPlan.presentationForm)}</div>`:''}
+        ${dims.productEffect?`<div class="k">产品效果</div><div class="v">${escapeHtml(dims.productEffect)}</div>`:''}
+        ${dims.usageScenario?`<div class="k">使用场景</div><div class="v">${escapeHtml(dims.usageScenario)}</div>`:''}
+        ${dims.userPainPoint?`<div class="k">用户痛点</div><div class="v">${escapeHtml(dims.userPainPoint)}</div>`:''}
+        ${dims.productHighlight?`<div class="k">产品亮点</div><div class="v">${escapeHtml(dims.productHighlight)}</div>`:''}
+      </div>
+    </div>`:''}
+
+    ${style.visualStyle?`
+    <div class="modal-section">
+      <h4>视觉风格</h4>
+      <div class="kv">
+        <div class="k">整体风格</div><div class="v">${escapeHtml(style.visualStyle)}</div>
+        ${style.lightingType?`<div class="k">打光</div><div class="v">${escapeHtml(style.lightingType)}</div>`:''}
+        ${style.overallMood?`<div class="k">整体氛围</div><div class="v">${escapeHtml(style.overallMood)}</div>`:''}
+        ${style.primaryColors?`<div class="k">主色调</div><div class="v">${style.primaryColors.map(c=>`<span style="display:inline-block;padding:2px 8px;background:${escapeHtml(c)};color:#fff;border-radius:4px;font-size:11px;margin-right:4px">${escapeHtml(c)}</span>`).join('')}</div>`:''}
+      </div>
+    </div>`:''}
+
+    ${factors.length?`
+    <div class="modal-section">
+      <h4>互动因子（吸引力来源）</h4>
+      <ul>${factors.map(f=>`<li><b>${escapeHtml(f.factor)}：</b>${escapeHtml(f.reason||'')}</li>`).join('')}</ul>
+    </div>`:''}
+
+    ${shots.length?`
+    <div class="modal-section">
+      <h4>分镜结构（前 ${shots.length} 镜）</h4>
+      <div class="shots-list">
+        ${shots.map((s,idx)=>`<div class="shot"><div><div class="ts">镜${idx+1}</div><div class="ts" style="color:var(--ink-3);font-weight:400;font-size:11px">${escapeHtml(s.timeRange||s.timestamp||'')}</div></div><div class="desc">${escapeHtml(s.description||s.desc||JSON.stringify(s).slice(0,200))}</div></div>`).join('')}
+      </div>
+    </div>`:''}
+
+    <div class="modal-actions">
+      <a class="btn secondary" href="${escapeHtml(v.url)}" target="_blank" rel="noopener">📺 抖音打开原视频</a>
+    </div>
+  `;
+  document.getElementById('modalContent').innerHTML = html;
+  document.getElementById('modalMask').classList.add('on');
+}
+
+function closeModal(){
+  document.getElementById('modalMask').classList.remove('on');
+}
+document.getElementById('modalMask').addEventListener('click', e=>{
+  if(e.target.id==='modalMask') closeModal();
+});
+
+boot();
+</script>
+
+
+</body></html>
