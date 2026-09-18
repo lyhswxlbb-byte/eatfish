@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "projects": [
+    {
+      "name": "家居素材分析",
+      "slug": "home-analysis",
+      "source_url": "https://040892c24705.aime-site.bytedance.net/",
+      "directory": "projects/home-analysis/",
+      "public_url": "https://lyhswxlbb-byte.github.io/eatfish/projects/home-analysis/",
+      "owner": "刘莹虹",
+      "status": "active",
+      "updated_at": "2026-09-18T14:17:00+08:00"
+    }
+  ]
+}
