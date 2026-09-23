@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="家居行业生意经营聚合工作台">
+  <title>家居行业生意经营工作台</title>
+  <style>
+    :root{
+      --bg:#f4f6fa;--surface:#fff;--ink:#1f2733;--muted:#667085;--line:#e5e9f0;
+      --accent:#b97745;--accent-soft:#f8eee6;--green:#2f7d5d;--shadow:0 18px 45px rgba(31,39,51,.08)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    .shell{min-height:100vh;padding:54px 24px 34px}
+    .page{width:min(1180px,100%);margin:0 auto}
+    .eyebrow{display:flex;align-items:center;gap:10px;color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:28px;height:2px;background:var(--accent)}
+    header{padding:8px 2px 34px}
+    h1{margin:15px 0 10px;font-size:clamp(34px,5vw,60px);line-height:1.08;letter-spacing:-.045em;font-weight:850}
+    .lead{margin:0;max-width:720px;color:var(--muted);font-size:16px;line-height:1.85}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+    .pill{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.7);font-size:12px;color:#596273}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(47,125,93,.12)}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .card{position:relative;display:flex;min-height:245px;padding:26px 24px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.78);color:inherit;text-decoration:none;overflow:hidden;transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease,background .24s ease}
+    .card::after{content:"";position:absolute;right:-52px;bottom:-70px;width:150px;height:150px;border-radius:50%;background:var(--wash);opacity:.42;transition:transform .3s ease}
+    .card:hover{transform:translateY(-5px);border-color:var(--tone);background:#fff;box-shadow:var(--shadow)}
+    .card:hover::after{transform:scale(1.25)}
+    .card:focus-visible{outline:3px solid rgba(185,119,69,.28);outline-offset:3px}
+    .card-inner{position:relative;z-index:1;width:100%;display:flex;flex-direction:column}
+    .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    .icon{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--wash);font-size:28px}
+    .status{font-size:11px;font-weight:700;color:var(--green);background:#ecf7f1;border-radius:999px;padding:5px 8px}
+    .card h2{margin:26px 0 8px;font-size:21px;line-height:1.25;letter-spacing:-.02em}
+    .card p{margin:0;color:var(--muted);font-size:13px;line-height:1.75}
+    .action{margin-top:auto;padding-top:25px;display:flex;align-items:center;justify-content:space-between;color:var(--tone);font-size:13px;font-weight:800}
+    .arrow{transition:transform .24s ease}.card:hover .arrow{transform:translateX(5px)}
+    .more{min-height:245px;border:1px dashed #cfd5df;border-radius:22px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:var(--muted);background:rgba(255,255,255,.38)}
+    .more-icon{font-size:30px;margin-bottom:12px}.more strong{display:block;color:var(--ink);font-size:17px;margin-bottom:7px}.more span{font-size:12px;line-height:1.7}
+    footer{margin-top:32px;padding:22px 4px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;color:#7a8494;font-size:12px;line-height:1.7}
+    footer a{color:inherit}
+    @media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:580px){.shell{padding:34px 16px 24px}.grid{grid-template-columns:1fr}.card,.more{min-height:214px}footer{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="page">
+      <header>
+        <div class="eyebrow">HOME · BUSINESS INTELLIGENCE</div>
+        <h1>家居行业生意经营工作台</h1>
+        <p class="lead">聚合家居重点赛道经营看板，一站进入居家日用、家纺、厨具、建材与家具等细分赛道，快速定位增长来源与经营变化。</p>
+        <div class="meta">
+          <span class="pill"><span class="dot"></span>7 个赛道均可访问</span>
+          <span class="pill">固定链接 · 同源内容持续刷新</span>
+          <span class="pill">由 Aime 创建</span>
+        </div>
+      </header>
+
+      <section class="grid" aria-label="家居赛道入口">
+        <a class="card" style="--tone:#9b6a45;--wash:#f5e9df" href="https://lyhswxlbb-byte.github.io/eatfish/projects/ddb2962760b1/" target="_blank" rel="noopener noreferrer">
+          <div class="card-inner"><div class="top"><div class="icon">🧺</div><span class="status">已上线</span></div><h2>居家日用</h2><p>收纳整理 · 清洁工具 · 居家布艺 · 汽车用品</p><div class="action"><span>进入赛道</span><span class="arrow">→</span></div></div>
+        </a>
+        <a class="card" style="--tone:#8e6b8f;--wash:#efe6f0" href="https://lyhswxlbb-byte.github.io/eatfish/projects/b22029169110/" target="_blank" rel="noopener noreferrer">
+          <div class="card-inner"><div class="top"><div class="icon">🛏️</div><span class="status">已上线</span></div><h2>床上用品</h2><p>套件 · 被芯 · 枕芯 · 床垫 · 家纺织物</p><div class="action"><span>进入赛道</span><span class="arrow">→</span></div></div>
+        </a>
+        <a class="card" style="--tone:#ba724b;--wash:#fae9df" href="https://lyhswxlbb-byte.github.io/eatfish/projects/8342c08da42b/" target="_blank" rel="noopener noreferrer">
+          <div class="card-inner"><div class="top"><div class="icon">🍳</div><span class="status">已上线</span></div><h2>餐饮厨具</h2><p>烹饪锅具 · 餐具 · 厨房工具 · 水具酒具</p><div class="action"><span>进入赛道</span><span class="arrow">→</span></div></div>
+        </a>
+        <a class="card" style="--tone:#6e7f65;--wash:#e9eee5" href="https://lyhswxlbb-byte.github.io/eatfish/projects/a261f3851f9b/" target="_blank" rel="noopener noreferrer">
+          <div class="card-inner"><div class="top"><div class="icon">🧰</div><span class="status">已上线</span></div><h2>家装辅材</h2><p>涂料辅料 · 五金工具 · 装修耗材 · 安装配件</p><div class="action"><span>进入赛道</span><span class="arrow">→</span></div></div>
+        </a>
+        <a class="card" style="--tone:#8c604f;--wash:#f0e5e0" href="https://lyhswxlbb-byte.github.io/eatfish/projects/4fe4801b2ef5/" target="_blank" rel="noopener noreferrer">
+          <div class="card-inner"><div class="top"><div class="icon">🛋️</div><span class="status">已上线</span></div><h2>家具</h2><p>客厅家具 · 卧室家具 · 餐厅家具 · 办公家具</p><div class="action"><span>进入赛道</span><span class="arrow">→</span></div></div>
+        </a>
+        <a class="card" style="--tone:#6f7f8f;--wash:#e6ebef" href="https://lyhswxlbb-byte.github.io/eatfish/projects/1bc58624fe71/" target="_blank" rel="noopener noreferrer">
+          <div class="card-inner"><div class="top"><div class="icon">🧱</div><span class="status">已上线</span></div><h2>家装建材</h2><p>卫浴 · 灯饰 · 地板 · 瓷砖 · 门窗与基础建材</p><div class="action"><span>进入赛道</span><span class="arrow">→</span></div></div>
+        </a>
+        <a class="card" style="--tone:#98716b;--wash:#f1e5e3" href="https://lyhswxlbb-byte.github.io/eatfish/projects/2ed7ce5236e8/" target="_blank" rel="noopener noreferrer">
+          <div class="card-inner"><div class="top"><div class="icon">✨</div><span class="status">已上线</span></div><h2>美容仪</h2><p>面部护理 · 身体护理 · 光电美容 · 家用美容设备</p><div class="action"><span>进入赛道</span><span class="arrow">→</span></div></div>
+        </a>
+        <div class="more"><div><div class="more-icon">🧭</div><strong>更多赛道</strong><span>敬请期待，持续扩充家居全域赛道覆盖</span></div></div>
+      </section>
+
+      <footer>
+        <span>数据与页面来源：家居经营洞察 · 7 个赛道经营看板</span>
+        <span>页面固定地址持续复用｜本页面由 Aime 创建</span>
+      </footer>
+    </div>
+  </main>
+
+
+</body></html>
