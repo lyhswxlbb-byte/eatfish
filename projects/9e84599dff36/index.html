@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="遇见上海：从外滩天际线到梧桐街区，一页漫游城市风景。">
+  <title>遇见上海 · 城市风景漫游</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&amp;family=Noto+Serif+SC:wght@500;700;900&amp;display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#17324d; --cream:#f7f0e3; --red:#c84a3c; --jade:#2f776d; --gold:#cf9a45; --paper:#fffaf1; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:'Noto Sans SC',sans-serif; overflow-x:hidden; }
+    a { color:inherit; text-decoration:none; }
+    .grain { position:fixed; inset:0; pointer-events:none; z-index:99; opacity:.12; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E"); }
+    nav { position:fixed; top:0; left:0; right:0; z-index:20; display:flex; align-items:center; justify-content:space-between; padding:18px 5vw; background:rgba(247,240,227,.78); backdrop-filter:blur(14px); border-bottom:1px solid rgba(23,50,77,.1); }
+    .brand { font-family:'Noto Serif SC',serif; font-weight:900; letter-spacing:.18em; }
+    .brand small { color:var(--red); margin-left:8px; font:700 10px 'Noto Sans SC'; letter-spacing:.12em; }
+    .links { display:flex; gap:28px; font-size:13px; font-weight:600; }
+    .links a { position:relative; }
+    .links a::after { content:''; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:var(--red); transition:.3s; }
+    .links a:hover::after { width:100%; }
+    .hero { min-height:100vh; position:relative; display:grid; place-items:center; padding:120px 5vw 40px; overflow:hidden; background:linear-gradient(180deg,#d9ece8 0%,#f7f0e3 70%); }
+    .sun { position:absolute; width:34vw; height:34vw; min-width:280px; min-height:280px; border-radius:50%; top:10%; right:8%; background:radial-gradient(circle at 35% 35%,#ffe6a6,#e49a55 58%,#c84a3c); box-shadow:0 0 80px rgba(200,74,60,.22); animation:float 7s ease-in-out infinite; }
+    .sun::after { content:'SHANGHAI'; position:absolute; inset:12%; border:1px solid rgba(255,255,255,.48); border-radius:50%; display:grid; place-items:center; color:rgba(255,255,255,.74); font-weight:900; letter-spacing:.38em; font-size:clamp(12px,1.2vw,18px); }
+    .hero-inner { width:min(1180px,100%); position:relative; z-index:2; display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:5vw; }
+    .eyebrow { display:flex; align-items:center; gap:14px; color:var(--red); letter-spacing:.28em; font-weight:700; font-size:12px; }
+    .eyebrow::before { content:''; width:48px; height:2px; background:var(--red); }
+    h1 { margin:20px 0 22px; font-family:'Noto Serif SC',serif; font-size:clamp(64px,10vw,138px); line-height:.9; letter-spacing:-.08em; }
+    h1 span { display:block; margin-left:1.2em; color:transparent; -webkit-text-stroke:2px var(--ink); }
+    .lead { max-width:520px; color:#40566b; font-size:clamp(16px,1.5vw,20px); line-height:1.9; }
+    .hero-actions { display:flex; align-items:center; gap:22px; margin-top:36px; }
+    .primary { display:inline-flex; align-items:center; gap:12px; padding:15px 24px; color:white; background:var(--ink); border-radius:999px; font-weight:700; box-shadow:0 12px 30px rgba(23,50,77,.18); transition:.3s; }
+    .primary:hover { transform:translateY(-3px); background:var(--red); }
+    .scroll-note { font-size:12px; color:#6a7c8d; letter-spacing:.12em; }
+    .skyline { align-self:end; filter:drop-shadow(0 28px 25px rgba(23,50,77,.16)); animation:rise 1.3s ease both; }
+    .skyline svg { display:block; width:100%; height:auto; }
+    main { position:relative; }
+    .marquee { overflow:hidden; padding:17px 0; color:var(--paper); background:var(--ink); transform:rotate(-1deg) scale(1.02); }
+    .marquee-track { width:max-content; display:flex; gap:42px; animation:marquee 24s linear infinite; font-family:'Noto Serif SC',serif; font-size:18px; letter-spacing:.18em; }
+    .marquee-track b { color:#efb764; }
+    section { padding:110px 5vw; }
+    .section-head { max-width:1180px; margin:0 auto 52px; display:flex; justify-content:space-between; align-items:end; gap:30px; }
+    .kicker { color:var(--red); font-weight:800; font-size:12px; letter-spacing:.24em; text-transform:uppercase; }
+    h2 { margin:10px 0 0; font:900 clamp(38px,5vw,72px)/1.15 'Noto Serif SC',serif; }
+    .section-head p { max-width:390px; color:#5d6b78; line-height:1.8; }
+    .places { width:min(1180px,100%); margin:auto; display:grid; grid-template-columns:repeat(12,1fr); gap:22px; }
+    .place { position:relative; min-height:330px; padding:28px; border-radius:30px; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; transition:.45s cubic-bezier(.2,.8,.2,1); isolation:isolate; }
+    .place:hover { transform:translateY(-8px) rotate(-.4deg); box-shadow:0 25px 55px rgba(23,50,77,.16); }
+    .place::before,.place::after { content:''; position:absolute; border-radius:50%; z-index:-1; transition:.45s; }
+    .place::before { width:220px; height:220px; right:-65px; top:-60px; background:rgba(255,255,255,.22); }
+    .place::after { width:130px; height:130px; right:55px; top:100px; border:1px solid rgba(255,255,255,.34); }
+    .place:hover::before { transform:scale(1.18); }
+    .wide { grid-column:span 7; } .narrow { grid-column:span 5; }
+    .bund { color:white; background:linear-gradient(135deg,#295a70,#17324d); }
+    .wukang { color:#402d27; background:linear-gradient(135deg,#d5b898,#efd8ba); }
+    .yuyuan { color:white; background:linear-gradient(135deg,#ba4339,#7f2729); }
+    .zhujiajiao { color:#173b39; background:linear-gradient(135deg,#a7cec6,#d8e8d9); }
+    .place-top { display:flex; justify-content:space-between; align-items:start; }
+    .num { font:900 54px/1 'Noto Serif SC',serif; opacity:.25; }
+    .tag { border:1px solid currentColor; border-radius:99px; padding:7px 12px; font-size:11px; letter-spacing:.12em; }
+    .place h3 { margin:0 0 8px; font:800 clamp(28px,3vw,42px) 'Noto Serif SC',serif; }
+    .place p { max-width:480px; margin:0; opacity:.82; line-height:1.75; }
+    .mini-art { position:absolute; right:20px; bottom:14px; width:40%; opacity:.75; z-index:-1; }
+    .route { background:var(--paper); }
+    .route-wrap { width:min(1180px,100%); margin:auto; display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; align-items:center; }
+    .route-copy p { color:#5f6d78; line-height:1.9; }
+    .tip { margin-top:30px; padding:18px 20px; border-left:4px solid var(--gold); background:#f6ead6; border-radius:0 14px 14px 0; font-size:14px; line-height:1.7; }
+    .timeline { position:relative; padding-left:36px; }
+    .timeline::before { content:''; position:absolute; left:8px; top:18px; bottom:18px; width:2px; background:linear-gradient(var(--red),var(--gold),var(--jade)); }
+    .stop { position:relative; display:grid; grid-template-columns:90px 1fr; gap:20px; padding:18px 0 30px; }
+    .stop::before { content:''; position:absolute; left:-34px; top:24px; width:14px; height:14px; border-radius:50%; background:var(--paper); border:4px solid var(--red); box-shadow:0 0 0 6px var(--paper); }
+    .time { color:var(--red); font-weight:900; }
+    .stop h4 { margin:0 0 6px; font-size:19px; }
+    .stop p { margin:0; color:#6b7882; line-height:1.7; font-size:14px; }
+    .quote { min-height:62vh; position:relative; display:grid; place-items:center; text-align:center; color:white; background:var(--jade); overflow:hidden; }
+    .quote::before { content:'沪'; position:absolute; font:900 60vw/1 'Noto Serif SC',serif; color:rgba(255,255,255,.045); }
+    blockquote { position:relative; max-width:900px; margin:0; font:700 clamp(30px,5vw,64px)/1.55 'Noto Serif SC',serif; }
+    blockquote em { color:#ffd58f; font-style:normal; }
+    footer { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:34px 5vw; background:var(--ink); color:#c9d2d9; font-size:12px; }
+    .to-top { width:42px; height:42px; display:grid; place-items:center; border:1px solid #789; border-radius:50%; transition:.3s; }
+    .to-top:hover { background:var(--red); border-color:var(--red); color:white; transform:translateY(-3px); }
+    @keyframes float { 50% { transform:translateY(16px) scale(.98); } }
+    @keyframes rise { from { opacity:0; transform:translateY(80px); } }
+    @keyframes marquee { to { transform:translateX(-50%); } }
+    @media (max-width:820px) {
+      .links { display:none; } .hero-inner { grid-template-columns:1fr; } .hero { padding-top:130px; } .sun { right:-90px; top:12%; }
+      h1 span { margin-left:.65em; } .skyline { margin-top:-30px; } section { padding:78px 6vw; }
+      .section-head,.route-wrap { display:block; } .section-head p { margin-top:22px; }
+      .wide,.narrow { grid-column:1/-1; } .place { min-height:290px; } .timeline { margin-top:48px; }
+      footer { align-items:flex-start; } .stop { grid-template-columns:70px 1fr; }
+    }
+    @media (prefers-reduced-motion:reduce) { * { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+  <nav>
+    <a class="brand" href="#top">上海漫游<small>SHANGHAI</small></a>
+    <div class="links"><a href="#places">城市名片</a><a href="#route">一日路线</a><a href="#about">关于上海</a></div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="sun"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">城市风景志 · 2026</div>
+        <h1>上<span>海</span></h1>
+        <p class="lead">一半是梧桐树下的旧时光，一半是黄浦江畔的未来感。上海把百年风华与当代节奏，折叠进每一次转身。</p>
+        <div class="hero-actions"><a class="primary" href="#places">开始漫游 <span>→</span></a><span class="scroll-note">向下发现城市</span></div>
+      </div>
+      <div class="skyline" aria-label="上海天际线插画">
+        <svg viewBox="0 0 620 600" role="img">
+          <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#315d73"></stop><stop offset="1" stop-color="#17324d"></stop></linearGradient></defs>
+          <path d="M0 530h50V390h45v140h28V310h58v220h42V210h42v320h35V95h26v435h38V260h65v270h24V170h44v360h33V350h58v180h52v70H0z" fill="url(#g)"></path>
+          <path d="M313 95l13-42 13 42M326 53V18M287 177h78M281 220h90" fill="none" stroke="#c84a3c" stroke-width="7"></path>
+          <path d="M230 210l14-76 14 76M433 170l22-55 22 55" fill="#cf9a45"></path>
+          <g fill="#f7d99a" opacity=".8"><path d="M72 420h10v15H72zM72 450h10v15H72zM142 350h11v18h-11zM142 390h11v18h-11zM320 145h12v14h-12zM320 285h12v14h-12zM465 210h10v18h-10zM465 250h10v18h-10zM545 390h10v16h-10z"></path></g>
+          <path d="M0 560c120-30 220 22 340-8s200 3 280-8v56H0z" fill="#2f776d" opacity=".82"></path>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="marquee"><div class="marquee-track"><span>外滩 <b>·</b> 陆家嘴 <b>·</b> 武康路 <b>·</b> 豫园 <b>·</b> 朱家角 <b>·</b> 苏州河 <b>·</b></span><span>外滩 <b>·</b> 陆家嘴 <b>·</b> 武康路 <b>·</b> 豫园 <b>·</b> 朱家角 <b>·</b> 苏州河 <b>·</b></span></div></div>
+
+    <section id="places">
+      <div class="section-head"><div><div class="kicker">City Icons / 城市名片</div><h2>四种风景，<br>读懂上海。</h2></div><p>从摩天大楼到江南水巷，城市的魅力不只在地标，更在新与旧、快与慢之间的奇妙张力。</p></div>
+      <div class="places">
+        <article class="place wide bund"><div class="place-top"><span class="tag">江岸天际线</span><span class="num">01</span></div><div><h3>外滩 × 陆家嘴</h3><p>隔着黄浦江，一边是万国建筑群，一边是不断生长的摩天楼。傍晚亮灯时，上海的过去与未来在这里同时抵达。</p></div><svg class="mini-art" viewBox="0 0 300 150"><path d="M10 140h30V75h25v65h22V45h28v95h25V20h16v120h28V60h38v80h20V85h32v55h36" fill="none" stroke="white" stroke-width="5" opacity=".55"></path></svg></article>
+        <article class="place narrow wukang"><div class="place-top"><span class="tag">梧桐街区</span><span class="num">02</span></div><div><h3>武康路</h3><p>红砖老宅、梧桐树影与街角咖啡，适合把脚步放慢，收藏上海最有生活感的一面。</p></div><svg class="mini-art" viewBox="0 0 240 150"><path d="M30 140V65l60-35 62 35v75M58 140V83h65v57M145 55l45 20v65" fill="none" stroke="#6f4436" stroke-width="6" opacity=".45"></path></svg></article>
+        <article class="place narrow yuyuan"><div class="place-top"><span class="tag">古典园林</span><span class="num">03</span></div><div><h3>豫园</h3><p>飞檐、回廊、湖石与灯彩，在繁华市中心围出一方古意。夜色里的九曲桥尤其动人。</p></div><svg class="mini-art" viewBox="0 0 240 150"><path d="M18 138h210M48 138V82h140v56M30 82h175l-34-26H69zM76 56l42-35 45 35" fill="none" stroke="#ffd6a2" stroke-width="5" opacity=".55"></path></svg></article>
+        <article class="place wide zhujiajiao"><div class="place-top"><span class="tag">江南水乡</span><span class="num">04</span></div><div><h3>朱家角</h3><p>石桥横跨河港，小船穿过白墙黛瓦。离开市区的喧闹，在水边喝茶，感受上海温柔的江南底色。</p></div><svg class="mini-art" viewBox="0 0 300 150"><path d="M10 130c52-58 100-58 152 0M10 130h280M185 130V72h65v58M170 73h95l-45-27z" fill="none" stroke="#285b55" stroke-width="5" opacity=".5"></path></svg></article>
+      </div>
+    </section>
+
+    <section class="route" id="route">
+      <div class="route-wrap">
+        <div class="route-copy"><div class="kicker">One Day Route / 一日路线</div><h2>把一天，<br>交给上海。</h2><p>如果只有一天，不妨用城市漫步的方式串起经典风景。无需赶路，留一点时间给街角与偶遇。</p><div class="tip"><strong>漫游提示</strong><br>春秋季最适合步行；外滩日落前约 40 分钟抵达，可以同时看到蓝调时刻与夜景亮灯。</div></div>
+        <div class="timeline">
+          <div class="stop"><div class="time">09:00</div><div><h4>豫园 · 从古城厢醒来</h4><p>看园林晨光，尝一份上海点心，避开午后人流。</p></div></div>
+          <div class="stop"><div class="time">12:30</div><div><h4>武康路 · 梧桐树下散步</h4><p>沿街看建筑，在安福路附近小憩。</p></div></div>
+          <div class="stop"><div class="time">16:30</div><div><h4>苏州河 · 沿水慢行</h4><p>从街区转入河岸，观察旧仓库与新公共空间。</p></div></div>
+          <div class="stop"><div class="time">18:30</div><div><h4>外滩 · 等一场华灯初上</h4><p>以浦东天际线作结，完成一天的新旧上海穿行。</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote" id="about"><blockquote>上海不是只有一种模样。<br>它让<em>历史有光</em>，也让<em>未来有岸</em>。</blockquote></section>
+  </main>
+
+  <footer><div><strong>遇见上海 · 城市风景漫游</strong><br>一页轻量城市介绍，献给每个准备出发的人。</div><a class="to-top" href="#top" aria-label="返回顶部">↑</a></footer>
+
+  <script>
+    const cards = document.querySelectorAll('.place');
+    const observer = new IntersectionObserver(entries => entries.forEach((entry, index) => {
+      if (entry.isIntersecting) { entry.target.animate([{opacity:0, transform:'translateY(40px)'},{opacity:1, transform:'translateY(0)'}], {duration:650, delay:index*80, fill:'both', easing:'cubic-bezier(.2,.8,.2,1)'}); observer.unobserve(entry.target); }
+    }), {threshold:.16});
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+
+</body></html>
