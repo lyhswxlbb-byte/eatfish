@@ -99,6 +99,17 @@
       "status": "active",
       "updated_at": "2026-10-09T17:41:11+08:00",
       "created_at": "2026-10-09T17:41:11+08:00"
+    },
+    {
+      "name": "北海道の冬 · 2027年2月 ANA 11日双人行程",
+      "slug": "app-17fqm8rtsss-f87b22",
+      "source_url": "http://127.0.0.1:8767/",
+      "directory": "projects/app-17fqm8rtsss-f87b22/",
+      "public_url": "https://lyhswxlbb-byte.github.io/eatfish/projects/app-17fqm8rtsss-f87b22/",
+      "owner": "liuyinghong.22",
+      "status": "active",
+      "updated_at": "2026-10-09T17:52:42+08:00",
+      "created_at": "2026-10-09T17:52:42+08:00"
     }
   ]
 }
