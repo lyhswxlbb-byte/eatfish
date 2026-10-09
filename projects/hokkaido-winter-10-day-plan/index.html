@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北海道の冬 · 2027年2月 ANA 11日双人行程</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext y='19' font-size='18'%3E%E2%9D%84%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --ink:#1a2332; --ink-soft:#4a5870; --paper:#f5f9fc; --snow:#fff;
+  --winter:#1e3a5f; --winter-2:#2c5282; --ice:#4a9ebb; --ice-soft:#d6e8f2;
+  --warm:#e8833a; --warm-soft:#fdebd9; --line:#e3ebf2; --ana:#1e3a8a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:"Noto Sans SC",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:"Noto Serif SC","Songti SC",serif}
+img{max-width:100%;display:block}
+a{color:var(--winter-2);text-decoration:none}
+
+/* Hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('assets/otaru-canal.jpg') center/cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,50,.15) 0%,rgba(20,30,50,.4) 45%,rgba(15,25,45,.88) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:60px 32px 56px}
+.hero-tag{display:inline-block;padding:6px 14px;border:1px solid rgba(255,255,255,.5);border-radius:999px;font-size:13px;letter-spacing:2px;margin-bottom:22px;backdrop-filter:blur(4px)}
+.hero h1{font-size:clamp(38px,6vw,72px);font-weight:900;line-height:1.1;letter-spacing:2px}
+.hero h1 .accent{color:#ffd9a8}
+.hero-sub{margin-top:18px;font-size:clamp(15px,1.6vw,19px);font-weight:300;max-width:720px;opacity:.92}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.hero-meta .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:10px 18px;border-radius:10px;backdrop-filter:blur(6px);font-size:14px}
+.hero-meta .chip b{display:block;font-size:18px;font-weight:700;margin-top:2px}
+
+.section{max-width:1200px;margin:0 auto;padding:80px 32px}
+.section.tall{padding:80px 32px}
+.section-head{margin-bottom:40px}
+.section-head .kicker{color:var(--ice);font-size:13px;letter-spacing:3px;font-weight:500}
+.section-head h2{font-size:clamp(28px,3.4vw,40px);font-weight:900;margin-top:6px;color:var(--winter)}
+.section-head p{color:var(--ink-soft);margin-top:10px;max-width:760px}
+
+/* 航班卡片 */
+.flight-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.flight-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;position:relative;overflow:hidden}
+.flight-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ana),var(--ice))}
+.flight-card .dir{font-size:12px;color:var(--ana);font-weight:700;letter-spacing:2px}
+.flight-card h3{font-size:18px;color:var(--winter);margin:6px 0 16px}
+.flight-leg{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.flight-leg:last-of-type{border-bottom:none}
+.flight-leg .time{font-size:20px;font-weight:700;color:var(--winter);font-family:"Noto Serif SC",serif;min-width:70px}
+.flight-leg .city{flex:1;font-size:14px}
+.flight-leg .city small{display:block;color:var(--ink-soft);font-size:12px;font-weight:400}
+.flight-leg .flight-no{font-size:12px;color:var(--ink-soft);background:var(--paper);padding:4px 10px;border-radius:999px}
+.flight-note{margin-top:14px;font-size:13px;color:#7a4a1f;background:var(--warm-soft);padding:10px 14px;border-radius:8px}
+
+/* 路线地图 */
+.map-wrap{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px;overflow:hidden}
+.map-wrap svg{width:100%;height:auto}
+.map-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;font-size:13px;color:var(--ink-soft)}
+.map-legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
+
+/* 城市详图 */
+.city-map-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.city-map-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;overflow:hidden}
+.city-map-card h3{font-size:16px;color:var(--winter);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.city-map-card .sub{font-size:12px;color:var(--ink-soft);margin-bottom:12px}
+.city-map-card svg{width:100%;height:auto;background:#f5f9fc;border-radius:10px}
+.city-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:11px;color:var(--ink-soft)}
+.city-legend span{display:inline-flex;align-items:center;gap:4px}
+.city-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;font-style:normal}
+.poi-list{margin-top:10px;font-size:12px;line-height:1.8;color:var(--ink)}
+.poi-list b{color:var(--winter)}
+.poi-list .tag{display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;margin-right:4px;color:#fff}
+.tag.spot{background:#4a9ebb}
+.tag.food{background:#e8833a}
+.tag.stay{background:#1e3a5f}
+.tag.station{background:#8aa0b4}
+
+/* 路线总览 */
+.route-overview{background:var(--winter);color:#fff;border-radius:20px;padding:40px;overflow:hidden;margin-top:24px}
+.route-overview h3{font-size:20px;margin-bottom:22px;color:#ffd9a8}
+.route-grid{display:grid;grid-template-columns:repeat(11,1fr);gap:8px}
+.route-day{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:14px 10px;text-align:center;min-height:130px;display:flex;flex-direction:column;justify-content:space-between}
+.route-day .d{font-size:11px;opacity:.7;letter-spacing:1px}
+.route-day .city{font-size:14px;font-weight:700;margin-top:8px;line-height:1.35}
+.route-day .icon{font-family:"Noto Serif SC",serif;font-size:18px;font-weight:700;margin-top:8px;opacity:.85}
+.route-day.arrive{background:rgba(232,131,58,.25);border-color:rgba(232,131,58,.5)}
+.route-day.return{background:rgba(74,158,187,.25);border-color:rgba(74,158,187,.5)}
+
+/* 天气 */
+.weather-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+.weather-card{background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line)}
+.weather-card h3{font-size:18px;color:var(--winter);margin-bottom:16px}
+.weather-table{width:100%;border-collapse:collapse;font-size:14px}
+.weather-table th,.weather-table td{padding:10px 8px;text-align:left;border-bottom:1px solid var(--line)}
+.weather-table th{color:var(--ink-soft);font-weight:500;font-size:13px;background:var(--paper)}
+.weather-table tr:last-child td{border-bottom:none}
+.temp{font-weight:700;color:var(--winter)}
+.temp .low{color:var(--ice)}
+.pack-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:6px}
+.pack-list li{padding-left:22px;position:relative;font-size:14px}
+.pack-list li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:10px;border-radius:50%;background:var(--ice)}
+.pack-list li.warn::before{background:var(--warm)}
+
+/* 每日行程 */
+.day{background:#fff;border-radius:20px;overflow:hidden;margin-bottom:32px;border:1px solid var(--line);box-shadow:0 4px 20px rgba(30,58,95,.05)}
+.day-img{height:300px;overflow:hidden;position:relative}
+.day-img img{width:100%;height:100%;object-fit:cover}
+.day-img .badge{position:absolute;top:20px;left:20px;background:rgba(255,255,255,.95);padding:8px 16px;border-radius:999px;font-size:13px;font-weight:700;color:var(--winter)}
+.day-img .stay-tag{position:absolute;top:20px;right:20px;background:rgba(30,58,95,.85);color:#fff;padding:8px 14px;border-radius:999px;font-size:12px}
+.day-body{padding:32px}
+.day-title{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.day-title .num{font-family:"Noto Serif SC",serif;font-size:32px;font-weight:900;color:var(--ice)}
+.day-title h3{font-size:22px;color:var(--winter)}
+.day-date{color:var(--ink-soft);font-size:14px;margin-bottom:14px}
+.day-schedule{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+.slot{padding:14px 16px;background:var(--paper);border-radius:12px;border-left:3px solid var(--ice)}
+.slot.noon{border-left-color:var(--warm)}
+.slot.evening{border-left-color:var(--winter)}
+.slot .t{font-size:11px;letter-spacing:1px;color:var(--ice);font-weight:700;text-transform:uppercase}
+.slot.noon .t{color:var(--warm)}
+.slot.evening .t{color:var(--winter)}
+.slot .c{font-size:14px;margin-top:4px;line-height:1.65}
+.photo-spot{margin-top:14px;padding:12px 16px;background:linear-gradient(90deg,#fff5e8,#fdebd9);border-radius:10px;font-size:13px;border-left:3px solid var(--warm)}
+.photo-spot b{color:#b85c1c}
+.day-tips{margin-top:10px;padding:12px 16px;background:#eef4fa;border-radius:10px;font-size:13px;color:var(--winter-2)}
+.day-tips b{color:var(--winter)}
+
+/* 打卡图集 */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.gallery.two{grid-template-columns:repeat(2,1fr)}
+.gallery a{display:block;border-radius:10px;overflow:hidden;position:relative;aspect-ratio:4/3}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.gallery a:hover img{transform:scale(1.05)}
+.gallery .cap{position:absolute;left:0;right:0;bottom:0;padding:6px 10px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:11px;line-height:1.4}
+
+/* 餐厅表 */
+.restaurant-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:14px;overflow:hidden}
+.restaurant-table th,.restaurant-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.restaurant-table th{background:var(--winter);color:#fff;font-weight:500;font-size:13px}
+.restaurant-table tr:last-child td{border-bottom:none}
+.restaurant-table .name{font-weight:700;color:var(--winter)}
+.restaurant-table .addr{color:var(--ink-soft);font-size:12px}
+.restaurant-table .price{font-weight:700;color:var(--warm);white-space:nowrap}
+
+/* 酒店 */
+.hotel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hotel-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column}
+.hotel-card .city{font-size:12px;color:var(--ana);font-weight:700;letter-spacing:2px}
+.hotel-card h4{font-size:18px;margin:6px 0 4px;color:var(--winter)}
+.hotel-card .zh{font-size:13px;color:var(--ink-soft)}
+.hotel-card .price{font-size:22px;font-weight:900;color:var(--warm);margin-top:10px;font-family:"Noto Serif SC",serif}
+.hotel-card .price small{font-size:12px;color:var(--ink-soft);font-weight:400;font-family:"Noto Sans SC",sans-serif}
+.hotel-card ul{list-style:none;margin-top:12px;font-size:13px;color:var(--ink);line-height:1.8}
+.hotel-card ul li{padding-left:16px;position:relative}
+.hotel-card ul li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--ice)}
+.hotel-card .highlight{margin-top:auto;padding-top:14px;font-size:12px;color:#b85c1c;background:var(--warm-soft);padding:10px 12px;border-radius:8px;margin-top:14px}
+
+/* 美食 */
+.food-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.food{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+.food .fnum{font-family:"Noto Serif SC",serif;font-size:30px;font-weight:900;color:var(--ice-soft);line-height:1}
+.food h4{font-size:15px;margin-top:10px;color:var(--winter)}
+.food p{font-size:12px;color:var(--ink-soft);margin-top:4px;line-height:1.5}
+
+/* 预算 */
+.budget{background:var(--winter);color:#fff;border-radius:20px;padding:40px}
+.budget h3{color:#ffd9a8;font-size:22px;margin-bottom:20px}
+.budget-table{width:100%;border-collapse:collapse;font-size:15px}
+.budget-table th,.budget-table td{padding:12px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,.15)}
+.budget-table th{font-weight:500;opacity:.7;font-size:13px}
+.budget-table .num{text-align:right;font-weight:700;color:#ffd9a8}
+.budget-table tfoot td{border-bottom:none;font-size:18px;font-weight:900;padding-top:18px}
+
+.transport{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.t-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
+.t-card h3{font-size:18px;color:var(--winter);margin-bottom:12px}
+.t-card ul{list-style:none;font-size:14px}
+.t-card ul li{padding:8px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:12px}
+.t-card ul li:last-child{border-bottom:none}
+.t-card ul li .v{font-weight:700;color:var(--winter)}
+
+.footer{text-align:center;padding:40px 20px 60px;color:var(--ink-soft);font-size:13px}
+
+@media (max-width:900px){
+  .section{padding:56px 20px}
+  .weather-grid,.transport,.day-schedule,.flight-row{grid-template-columns:1fr}
+  .hotel-grid{grid-template-columns:1fr}
+  .food-grid{grid-template-columns:1fr 1fr}
+  .route-grid{grid-template-columns:repeat(2,1fr)}
+  .day-img{height:220px}
+  .day-body{padding:22px}
+}
+@media (max-width:560px){
+  .food-grid{grid-template-columns:1fr}
+  .pack-list{grid-template-columns:1fr}
+}
+
+/* PDF 打印样式 - A4 竖版，完整可读 */
+@page{
+  size: A4;
+  margin: 15mm 12mm;
+}
+@media print{
+  body{background:#fff}
+  .hero{min-height:auto;page-break-after:always}
+  .section{padding:20px 0;page-break-inside:auto}
+  .day,.city-map-card,.hotel-card,.flight-card,.weather-card,.t-card,.food,.budget{page-break-inside:avoid;margin-bottom:16px}
+  .section-head{margin-bottom:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <span class="hero-tag">HOKKAIDO · WINTER 2027 · ANA</span>
+    <h1>北海道の冬<br><span class="accent">双人 11 日雪国之旅</span></h1>
+    <p class="hero-sub">上海浦东经东京羽田中转直飞札幌新千岁，ANA 全服务航空。两人一行，追雪、泡汤、看企鹅、百万夜景、吃海鲜——这是一份为你们定制的不赶路路线。</p>
+    <div class="hero-meta">
+      <div class="chip">出发<b>2027.02.17 周三</b></div>
+      <div class="chip">返回<b>2027.02.27 周六</b></div>
+      <div class="chip">天数<b>11 天 10 晚</b></div>
+      <div class="chip">人数<b>2 人 · 住标准间</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 航班详情 -->
+<section class="section">
+  <div class="section-head">
+    <div class="kicker">FLIGHT DETAILS</div>
+    <h2>ANA 航班详情</h2>
+    <p>去程在东京羽田 T3 落地后需转 T2 搭乘国内线（NH61），转机时间 4 小时 45 分，时间充裕可在羽田吃个拉面或逛逛免税店。回程羽田转机 4 小时 30 分。</p>
+  </div>
+  <div class="flight-row">
+    <div class="flight-card">
+      <div class="dir">OUTBOUND · 2027/02/17 周三</div>
+      <h3>上海浦东 → 东京羽田 → 札幌新千岁</h3>
+      <div class="flight-leg">
+        <div class="time">02:35</div>
+        <div class="city">上海浦东 T2<small>PVG</small></div>
+        <div class="flight-no">NH968</div>
+      </div>
+      <div class="flight-leg">
+        <div class="time">06:15</div>
+        <div class="city">东京羽田 T3<small>HND · 国际到达</small></div>
+      </div>
+      <div class="flight-leg">
+        <div class="time">11:00</div>
+        <div class="city">东京羽田 T2<small>HND · 国内出发（需换航站楼）</small></div>
+        <div class="flight-no">NH61</div>
+      </div>
+      <div class="flight-leg">
+        <div class="time">12:40</div>
+        <div class="city">札幌新千岁 D<small>CTS · 到达北海道</small></div>
+      </div>
+      <div class="flight-note">Tip：NH968 是红眼航班，建议飞机上补觉。羽田 T3 到 T2 搭免费摆渡巴士约 15 分钟，有 4 小时转机时间完全不赶。</div>
+    </div>
+    <div class="flight-card">
+      <div class="dir">RETURN · 2027/02/27 周六</div>
+      <h3>札幌新千岁 → 东京羽田 → 上海浦东</h3>
+      <div class="flight-leg">
+        <div class="time">12:30</div>
+        <div class="city">札幌新千岁 D<small>CTS · 10:00 前需到机场</small></div>
+        <div class="flight-no">NH62</div>
+      </div>
+      <div class="flight-leg">
+        <div class="time">14:10</div>
+        <div class="city">东京羽田 T2<small>HND · 国内到达</small></div>
+      </div>
+      <div class="flight-leg">
+        <div class="time">18:40</div>
+        <div class="city">东京羽田 T2<small>HND · 国际出发</small></div>
+        <div class="flight-no">NH971</div>
+      </div>
+      <div class="flight-leg">
+        <div class="time">21:25</div>
+        <div class="city">上海浦东 T2<small>PVG · 到家</small></div>
+      </div>
+      <div class="flight-note">Tip：D11 上午不能安排远的景点，建议 9:30 从札幌站搭快速エアポート（40 分钟）到新千岁。ANA 经济舱含 2 件 23kg 托运行李，足够装伴手礼。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 路线地图 -->
+<section class="section" style="padding-top:0">
+  <div class="section-head">
+    <div class="kicker">ROUTE MAP</div>
+    <h2>行程路线地图</h2>
+    <p>以札幌为圆心，先北上旭川、美瑛，再南下登别、洞爷、函馆，最后回札幌——不走回头路。</p>
+  </div>
+  <div class="map-wrap">
+    <svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg">
+      <!-- 北海道简化轮廓 -->
+      <path d="M120,120 Q180,60 280,70 Q380,50 480,80 Q580,60 660,100 Q760,110 800,180 Q830,240 790,300 Q820,360 760,420 Q700,490 600,500 Q500,520 420,490 Q340,510 260,470 Q180,450 150,380 Q100,320 130,260 Q90,200 120,120 Z"
+            fill="#eef4fa" stroke="#b8c8d8" stroke-width="2"/>
+      <!-- 佐吕间湖/网走方向（北） -->
+      <text x="450" y="55" text-anchor="middle" font-size="12" fill="#8aa0b4" font-family="Noto Sans SC">↑ 鄂霍次克海 · 网走 / 知床</text>
+      <!-- 日本海方向（西） -->
+      <text x="40" y="290" text-anchor="middle" font-size="12" fill="#8aa0b4" font-family="Noto Sans SC" transform="rotate(-90 40 290)">日本海</text>
+      <!-- 太平洋方向（东南） -->
+      <text x="850" y="300" text-anchor="middle" font-size="12" fill="#8aa0b4" font-family="Noto Sans SC" transform="rotate(90 850 300)">太平洋</text>
+
+      <!-- 路线连线 -->
+      <path d="M290,340 L310,300 L330,260 L380,230 L430,210 L450,200" fill="none" stroke="#e8833a" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <path d="M450,200 L490,230 L470,270" fill="none" stroke="#e8833a" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <path d="M470,270 L350,340 L290,360" fill="none" stroke="#e8833a" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <path d="M290,360 L280,400 L260,430" fill="none" stroke="#e8833a" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <path d="M260,430 L230,460 L190,480" fill="none" stroke="#e8833a" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <path d="M190,480 L240,430 L270,380 L290,340" fill="none" stroke="#4a9ebb" stroke-width="2.5" stroke-dasharray="6 4"/>
+
+      <!-- 城市点 -->
+      <!-- 新千岁机场 -->
+      <circle cx="290" cy="360" r="8" fill="#e8833a"/>
+      <text x="305" y="365" font-size="14" font-weight="700" fill="#1e3a5f" font-family="Noto Sans SC">新千岁机场 CTS</text>
+      <text x="305" y="382" font-size="11" fill="#7a8a9e" font-family="Noto Sans SC">D1 到达 / D11 离开</text>
+
+      <!-- 札幌 -->
+      <circle cx="290" cy="340" r="10" fill="#1e3a5f"/>
+      <circle cx="290" cy="340" r="16" fill="none" stroke="#1e3a5f" stroke-width="1.5" opacity=".4"/>
+      <text x="200" y="335" font-size="16" font-weight="900" fill="#1e3a5f" font-family="Noto Sans SC">札幌</text>
+      <text x="200" y="352" font-size="11" fill="#7a8a9e" font-family="Noto Sans SC">D1-3 · D9-10 · 5 晚</text>
+
+      <!-- 小樽 -->
+      <circle cx="240" cy="330" r="7" fill="#4a9ebb"/>
+      <text x="180" y="315" font-size="14" font-weight="700" fill="#1e3a5f" font-family="Noto Sans SC">小樽</text>
+      <text x="180" y="330" font-size="11" fill="#7a8a9e" font-family="Noto Sans SC">D3 一日游</text>
+
+      <!-- 旭川 -->
+      <circle cx="450" cy="200" r="9" fill="#1e3a5f"/>
+      <text x="465" y="195" font-size="15" font-weight="800" fill="#1e3a5f" font-family="Noto Sans SC">旭川</text>
+      <text x="465" y="212" font-size="11" fill="#7a8a9e" font-family="Noto Sans SC">D4-5 · 2 晚</text>
+
+      <!-- 美瑛 -->
+      <circle cx="490" cy="230" r="6" fill="#4a9ebb"/>
+      <text x="505" y="235" font-size="13" font-weight="700" fill="#1e3a5f" font-family="Noto Sans SC">美瑛</text>
+      <text x="505" y="250" font-size="11" fill="#7a8a9e" font-family="Noto Sans SC">D5 青池</text>
+
+      <!-- 登别 -->
+      <circle cx="280" cy="400" r="8" fill="#e8833a"/>
+      <text x="295" y="405" font-size="14" font-weight="800" fill="#1e3a5f" font-family="Noto Sans SC">登别</text>
+      <text x="295" y="422" font-size="11" fill="#7a8a9e" font-family="Noto Sans SC">D6 · 1 晚温泉</text>
+
+      <!-- 洞爷 -->
+      <circle cx="230" cy="460" r="6" fill="#4a9ebb"/>
+      <text x="160" y="455" font-size="13" font-weight="700" fill="#1e3a5f" font-family="Noto Sans SC">洞爷湖</text>
+      <text x="160" y="470" font-size="11" fill="#7a8a9e" font-family="Noto Sans SC">D7 途经</text>
+
+      <!-- 函馆 -->
+      <circle cx="190" cy="480" r="9" fill="#1e3a5f"/>
+      <text x="100" y="495" font-size="15" font-weight="800" fill="#1e3a5f" font-family="Noto Sans SC">函馆</text>
+      <text x="100" y="512" font-size="11" fill="#7a8a9e" font-family="Noto Sans SC">D7-8 · 2 晚</text>
+    </svg>
+    <div class="map-legend">
+      <span><span class="dot" style="background:#1e3a5f"></span>住宿城市</span>
+      <span><span class="dot" style="background:#4a9ebb"></span>当日景点</span>
+      <span><span class="dot" style="background:#e8833a"></span>机场 / 温泉</span>
+      <span><span class="dot" style="background:#e8833a"></span>--- 去程路线</span>
+      <span><span class="dot" style="background:#4a9ebb"></span>--- 回程路线</span>
+    </div>
+  </div>
+
+  <!-- 11天总览 -->
+  <div class="route-overview">
+    <h3>11 天住宿与主题</h3>
+    <div class="route-grid">
+      <div class="route-day arrive"><div class="d">D1 · 2/17</div><div class="city">到札幌</div><div class="icon">机</div></div>
+      <div class="route-day"><div class="d">D2 · 2/18</div><div class="city">札幌</div><div class="icon">雪</div></div>
+      <div class="route-day"><div class="d">D3 · 2/19</div><div class="city">小樽</div><div class="icon">运</div></div>
+      <div class="route-day"><div class="d">D4 · 2/20</div><div class="city">旭川</div><div class="icon">企</div></div>
+      <div class="route-day"><div class="d">D5 · 2/21</div><div class="city">美瑛</div><div class="icon">池</div></div>
+      <div class="route-day"><div class="d">D6 · 2/22</div><div class="city">登别</div><div class="icon">汤</div></div>
+      <div class="route-day"><div class="d">D7 · 2/23</div><div class="city">函馆</div><div class="icon">船</div></div>
+      <div class="route-day"><div class="d">D8 · 2/24</div><div class="city">函馆</div><div class="icon">夜</div></div>
+      <div class="route-day"><div class="d">D9 · 2/25</div><div class="city">回札幌</div><div class="icon">购</div></div>
+      <div class="route-day"><div class="d">D10 · 2/26</div><div class="city">札幌</div><div class="icon">滑</div></div>
+      <div class="route-day return"><div class="d">D11 · 2/27</div><div class="city">回家</div><div class="icon">归</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 城市详图 -->
+<section class="section tall" style="padding-top:0">
+  <div class="section-head">
+    <div class="kicker">CITY MAPS</div>
+    <h2>各城市景点 / 餐厅 / 酒店地图</h2>
+    <p>每个城市一张简图，<b style="color:#4a9ebb">蓝点=景点</b>、<b style="color:#e8833a">橙点=餐厅</b>、<b style="color:#1e3a5f">深蓝点=酒店</b>、<b style="color:#8aa0b4">灰方块=车站</b>。位置为相对示意，实际步行距离以 Google Maps 为准。</p>
+  </div>
+  <div class="city-map-grid">
+
+    <!-- 札幌 -->
+    <div class="city-map-card">
+      <h3>札幌 Sapporo</h3>
+      <div class="sub">5 晚大本营 · 地铁南北线 / 东西线</div>
+      <svg viewBox="0 0 600 380">
+        <line x1="0" y1="190" x2="600" y2="190" stroke="#d6e0ea" stroke-width="20"/>
+        <line x1="300" y1="0" x2="300" y2="380" stroke="#d6e0ea" stroke-width="18"/>
+        <line x1="0" y1="290" x2="600" y2="290" stroke="#e3ebf2" stroke-width="10"/>
+        <rect x="285" y="120" width="30" height="140" fill="#cfe3d6" rx="4"/>
+        <text x="335" y="195" font-size="11" fill="#4a7a5e">大通公园</text>
+        <rect x="270" y="50" width="60" height="30" fill="#8aa0b4" rx="4"/>
+        <text x="300" y="45" font-size="11" fill="#1e3a5f" text-anchor="middle" font-weight="700">札幌站</text>
+        <circle cx="200" cy="80" r="7" fill="#4a9ebb"/>
+        <text x="200" y="105" font-size="10" fill="#1e3a5f" text-anchor="middle">北海道大学</text>
+        <circle cx="300" cy="130" r="6" fill="#4a9ebb"/>
+        <text x="240" y="125" font-size="10" fill="#1e3a5f">电视塔</text>
+        <text x="200" y="250" font-size="10" fill="#7a8a9e">狸小路商店街</text>
+        <circle cx="300" cy="320" r="8" fill="#1e3a5f"/>
+        <text x="300" y="345" font-size="11" fill="#1e3a5f" text-anchor="middle" font-weight="700">薄野（住）</text>
+        <circle cx="260" cy="200" r="5" fill="#e8833a"/>
+        <text x="170" y="185" font-size="10" fill="#b85c1c">GARAKU 汤咖喱</text>
+        <circle cx="340" cy="300" r="5" fill="#e8833a"/>
+        <text x="355" y="305" font-size="10" fill="#b85c1c">味の時計台 / 一幻</text>
+        <circle cx="500" cy="100" r="6" fill="#4a9ebb"/>
+        <text x="500" y="125" font-size="10" fill="#1e3a5f" text-anchor="middle">啤酒博物馆</text>
+        <circle cx="80" cy="200" r="6" fill="#4a9ebb"/>
+        <text x="80" y="225" font-size="10" fill="#1e3a5f" text-anchor="middle">白色恋人公园</text>
+      </svg>
+      <div class="poi-list">
+        <div><span class="tag station">站</span><b>札幌站</b> → 地铁、JR、新千岁快速</div>
+        <div><span class="tag spot">景</span><b>大通公园 / 电视塔</b> → 白色灯树节主场</div>
+        <div><span class="tag stay">住</span><b>Daiwa Roynet 薄野</b> → 南 4 西 1，地铁薄野站步行 3 分</div>
+        <div><span class="tag food">食</span><b>味の時計台 / 一幻</b> → 都在薄野南 6-7 条</div>
+        <div><span class="tag food">食</span><b>GARAKU</b> → 南 2 西 2，大通步行 5 分</div>
+      </div>
+    </div>
+
+    <!-- 小樽 -->
+    <div class="city-map-card">
+      <h3>小樽 Otaru</h3>
+      <div class="sub">D3 一日游 · JR 札幌 32 分钟直达</div>
+      <svg viewBox="0 0 600 380">
+        <rect x="480" y="0" width="120" height="380" fill="#d6e8f2"/>
+        <text x="540" y="200" font-size="11" fill="#4a7a9e" text-anchor="middle">日本海</text>
+        <rect x="280" y="80" width="20" height="200" fill="#a8c8e0"/>
+        <text x="290" y="60" font-size="11" fill="#1e3a5f" text-anchor="middle" font-weight="700">小樽运河</text>
+        <line x1="260" y1="150" x2="320" y2="150" stroke="#8aa0b4" stroke-width="4"/>
+        <text x="150" y="155" font-size="10" fill="#1e3a5f">浅草桥（机位）</text>
+        <line x1="260" y1="230" x2="320" y2="230" stroke="#8aa0b4" stroke-width="4"/>
+        <text x="150" y="235" font-size="10" fill="#1e3a5f">中央桥</text>
+        <rect x="260" y="20" width="60" height="28" fill="#8aa0b4" rx="4"/>
+        <text x="290" y="15" font-size="11" fill="#1e3a5f" text-anchor="middle" font-weight="700">小樽站</text>
+        <circle cx="360" cy="50" r="6" fill="#e8833a"/>
+        <text x="380" y="55" font-size="10" fill="#b85c1c">三角市场</text>
+        <line x1="100" y1="180" x2="280" y2="180" stroke="#e3ebf2" stroke-width="14"/>
+        <text x="180" y="170" font-size="10" fill="#7a8a9e" text-anchor="middle">堺町通</text>
+        <circle cx="180" cy="180" r="5" fill="#e8833a"/>
+        <text x="180" y="205" font-size="10" fill="#b85c1c" text-anchor="middle">LeTAO / 北一硝子</text>
+        <circle cx="120" cy="120" r="6" fill="#4a9ebb"/>
+        <text x="120" y="105" font-size="10" fill="#1e3a5f" text-anchor="middle">船见坂</text>
+        <circle cx="80" cy="290" r="8" fill="#4a9ebb"/>
+        <text x="80" y="315" font-size="10" fill="#1e3a5f" text-anchor="middle">天狗山夜景</text>
+      </svg>
+      <div class="poi-list">
+        <div><span class="tag station">站</span><b>小樽站</b> → 步行 10 分到运河</div>
+        <div><span class="tag food">食</span><b>三角市场 まるかつ</b> → 站旁海鲜丼</div>
+        <div><span class="tag food">食</span><b>LeTAO / 北菓楼</b> → 堺町通步行 15 分</div>
+        <div><span class="tag spot">景</span><b>船见坂</b> → 运河西侧坡，《情书》取景</div>
+        <div><span class="tag spot">景</span><b>天狗山缆车</b> → 小樽港夜景</div>
+      </div>
+    </div>
+
+    <!-- 旭川 -->
+    <div class="city-map-card">
+      <h3>旭川 Asahikawa</h3>
+      <div class="sub">2 晚 · D4 企鹅 / D5 美瑛往返</div>
+      <svg viewBox="0 0 600 380">
+        <line x1="0" y1="200" x2="600" y2="200" stroke="#d6e0ea" stroke-width="18"/>
+        <line x1="300" y1="0" x2="300" y2="380" stroke="#e3ebf2" stroke-width="10"/>
+        <rect x="270" y="180" width="60" height="40" fill="#8aa0b4" rx="4"/>
+        <text x="300" y="170" font-size="12" fill="#1e3a5f" text-anchor="middle" font-weight="700">旭川站</text>
+        <circle cx="300" cy="150" r="6" fill="#4a9ebb"/>
+        <text x="340" y="155" font-size="10" fill="#1e3a5f">AEAO 大厦</text>
+        <circle cx="220" cy="230" r="8" fill="#1e3a5f"/>
+        <text x="180" y="255" font-size="10" fill="#1e3a5f" text-anchor="middle">OMO7（住）</text>
+        <circle cx="200" cy="80" r="6" fill="#e8833a"/>
+        <text x="200" y="105" font-size="10" fill="#b85c1c" text-anchor="middle">拉面村</text>
+        <circle cx="380" cy="230" r="5" fill="#e8833a"/>
+        <text x="395" y="235" font-size="10" fill="#b85c1c">松尾成吉思汗</text>
+        <circle cx="520" cy="100" r="10" fill="#4a9ebb"/>
+        <text x="520" y="130" font-size="11" fill="#1e3a5f" text-anchor="middle" font-weight="700">旭山动物园</text>
+        <text x="520" y="145" font-size="9" fill="#7a8a9e" text-anchor="middle">巴士 40 分</text>
+        <circle cx="60" cy="300" r="8" fill="#4a9ebb"/>
+        <text x="60" y="325" font-size="10" fill="#1e3a5f" text-anchor="middle">美瑛（D5）</text>
+      </svg>
+      <div class="poi-list">
+        <div><span class="tag stay">住</span><b>OMO7 旭川</b> → 站步行 5 分</div>
+        <div><span class="tag spot">景</span><b>旭山动物园</b> → 4 号巴士 40 分，企鹅 11:00/14:30</div>
+        <div><span class="tag food">食</span><b>拉面村（青葉、一砂）</b> → 巴士 15 分</div>
+        <div><span class="tag food">食</span><b>松尾成吉思汗</b> → 站步行 10 分</div>
+        <div><span class="tag spot">景</span><b>美瑛青池</b> → JR 30 分换观光巴士</div>
+      </div>
+    </div>
+
+    <!-- 美瑛 -->
+    <div class="city-map-card">
+      <h3>美瑛 Biei</h3>
+      <div class="sub">D5 一日游 · 从旭川 JR 30 分</div>
+      <svg viewBox="0 0 600 380">
+        <!-- 道路 -->
+        <line x1="0" y1="200" x2="600" y2="200" stroke="#d6e0ea" stroke-width="14"/>
+        <!-- 美瑛站 -->
+        <rect x="270" y="185" width="60" height="30" fill="#8aa0b4" rx="4"/>
+        <text x="300" y="180" font-size="11" fill="#1e3a5f" text-anchor="middle" font-weight="700">美瑛站</text>
+        <!-- 青池（西北） -->
+        <circle cx="120" cy="100" r="10" fill="#4a9ebb"/>
+        <text x="120" y="85" font-size="11" fill="#1e3a5f" text-anchor="middle" font-weight="700">青池</text>
+        <text x="120" y="125" font-size="9" fill="#7a8a9e" text-anchor="middle">点灯 17:00-21:00</text>
+        <!-- 白须瀑布 -->
+        <circle cx="180" cy="80" r="6" fill="#4a9ebb"/>
+        <text x="220" y="85" font-size="10" fill="#1e3a5f">白须瀑布</text>
+        <!-- 四季彩之丘（东） -->
+        <circle cx="450" cy="120" r="8" fill="#4a9ebb"/>
+        <text x="450" y="105" font-size="11" fill="#1e3a5f" text-anchor="middle">四季彩之丘</text>
+        <!-- 拼布之路（北） -->
+        <circle cx="350" cy="60" r="6" fill="#4a9ebb"/>
+        <text x="400" y="65" font-size="10" fill="#1e3a5f">拼布之路 / 树精灵</text>
+        <!-- 大野商店（车站旁） -->
+        <circle cx="230" cy="220" r="5" fill="#e8833a"/>
+        <text x="150" y="225" font-size="10" fill="#b85c1c">大野商店咖喱</text>
+        <!-- 观光巴士路线 -->
+        <path d="M300,200 Q200,150 120,120 Q150,80 180,80 M300,200 Q380,150 450,120" fill="none" stroke="#e8833a" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="300" y="260" font-size="10" fill="#b85c1c" text-anchor="middle">--- 美瑛号观光巴士环线</text>
+      </svg>
+      <div class="poi-list">
+        <div><span class="tag station">站</span><b>美瑛站</b> → 旭川 JR 30 分</div>
+        <div><span class="tag spot">景</span><b>青池</b> → 白天蓝绿、夜间蓝灯点灯</div>
+        <div><span class="tag spot">景</span><b>白须瀑布</b> → 青池旁步行 10 分</div>
+        <div><span class="tag food">食</span><b>大野商店</b> → 车站旁美瑛牛咖喱</div>
+        <div><span class="tag spot">景</span><b>四季彩之丘</b> → 雪中拼布农场</div>
+      </div>
+    </div>
+
+    <!-- 登别 -->
+    <div class="city-map-card">
+      <h3>登别 Noboribetsu</h3>
+      <div class="sub">D6 一晚温泉 · 札幌特急 1 小时</div>
+      <svg viewBox="0 0 600 380">
+        <!-- 地狱谷（北，硫磺） -->
+        <ellipse cx="300" cy="100" rx="180" ry="70" fill="#f0e6d2" stroke="#d4c4a0" stroke-width="2"/>
+        <text x="300" y="80" font-size="12" fill="#7a6a3e" text-anchor="middle" font-weight="700">地狱谷（硫磺喷气）</text>
+        <circle cx="250" cy="100" r="6" fill="#e8833a"/>
+        <text x="200" y="125" font-size="10" fill="#b85c1c">大汤沼</text>
+        <!-- 温泉街（南北向） -->
+        <line x1="300" y1="170" x2="300" y2="320" stroke="#d6e0ea" stroke-width="20"/>
+        <text x="330" y="250" font-size="11" fill="#7a8a9e">温泉街</text>
+        <!-- 第一滝本馆 -->
+        <circle cx="300" cy="230" r="10" fill="#1e3a5f"/>
+        <text x="380" y="235" font-size="11" fill="#1e3a5f" font-weight="700">第一滝本馆（住）</text>
+        <!-- 温泉馒头店 -->
+        <circle cx="260" cy="280" r="5" fill="#e8833a"/>
+        <text x="150" y="285" font-size="10" fill="#b85c1c">温泉馒头 / 烤地瓜</text>
+        <!-- 登别站（下方） -->
+        <rect x="270" y="330" width="60" height="30" fill="#8aa0b4" rx="4"/>
+        <text x="300" y="325" font-size="11" fill="#1e3a5f" text-anchor="middle" font-weight="700">登别站</text>
+        <text x="300" y="375" font-size="9" fill="#7a8a9e" text-anchor="middle">巴士 15 分到温泉街</text>
+      </svg>
+      <div class="poi-list">
+        <div><span class="tag station">站</span><b>登别站</b> → 道南巴士 15 分到温泉街</div>
+        <div><span class="tag stay">住</span><b>第一滝本馆</b> → 一泊二食蟹腿自助</div>
+        <div><span class="tag spot">景</span><b>地狱谷散步道</b> → 旅馆步行 5 分，30 分环线</div>
+        <div><span class="tag food">食</span><b>温泉馒头 / 烤地瓜</b> → 温泉街小店</div>
+      </div>
+    </div>
+
+    <!-- 函馆 -->
+    <div class="city-map-card">
+      <h3>函馆 Hakodate</h3>
+      <div class="sub">2 晚 · 世界三大夜景 + 朝市海鲜</div>
+      <svg viewBox="0 0 600 380">
+        <!-- 海（南侧） -->
+        <rect x="0" y="260" width="600" height="120" fill="#d6e8f2"/>
+        <text x="300" y="350" font-size="11" fill="#4a7a9e" text-anchor="middle">函馆湾</text>
+        <!-- 函馆山（东南） -->
+        <ellipse cx="480" cy="240" rx="60" ry="40" fill="#cfe3d6"/>
+        <text x="480" y="235" font-size="10" fill="#4a7a5e" text-anchor="middle" font-weight="700">函馆山</text>
+        <circle cx="480" cy="220" r="6" fill="#4a9ebb"/>
+        <text x="540" y="215" font-size="9" fill="#1e3a5f">缆车</text>
+        <!-- 函馆站（东北） -->
+        <rect x="430" y="80" width="70" height="30" fill="#8aa0b4" rx="4"/>
+        <text x="465" y="75" font-size="11" fill="#1e3a5f" text-anchor="middle" font-weight="700">函馆站</text>
+        <!-- 朝市 -->
+        <circle cx="430" cy="130" r="6" fill="#e8833a"/>
+        <text x="490" y="135" font-size="10" fill="#b85c1c">函馆朝市</text>
+        <!-- La Vista（湾岸） -->
+        <circle cx="350" cy="280" r="10" fill="#1e3a5f"/>
+        <text x="250" y="275" font-size="10" fill="#1e3a5f" font-weight="700">La Vista Bay（住）</text>
+        <!-- 红砖仓库 -->
+        <circle cx="300" cy="290" r="6" fill="#4a9ebb"/>
+        <text x="180" y="295" font-size="10" fill="#1e3a5f">金森红砖仓库</text>
+        <!-- 八幡坂（西侧坡道） -->
+        <circle cx="150" cy="200" r="7" fill="#4a9ebb"/>
+        <text x="100" y="185" font-size="10" fill="#1e3a5f">八幡坂</text>
+        <text x="100" y="215" font-size="9" fill="#7a8a9e">（元町坡道）</text>
+        <!-- 幸运小丑 -->
+        <circle cx="200" cy="150" r="5" fill="#e8833a"/>
+        <text x="220" y="155" font-size="10" fill="#b85c1c">幸运小丑汉堡</text>
+        <!-- 热带植物园（北远郊） -->
+        <circle cx="100" cy="60" r="6" fill="#4a9ebb"/>
+        <text x="100" y="45" font-size="10" fill="#1e3a5f" text-anchor="middle">热带植物园</text>
+        <text x="100" y="75" font-size="9" fill="#7a8a9e" text-anchor="middle">猴子泡温泉</text>
+      </svg>
+      <div class="poi-list">
+        <div><span class="tag station">站</span><b>函馆站</b> → 朝市步行 1 分</div>
+        <div><span class="tag food">食</span><b>函馆朝市 うにむら</b> → 活イカ+海胆丼</div>
+        <div><span class="tag stay">住</span><b>La Vista Bay</b> → 顶楼温泉看函馆山</div>
+        <div><span class="tag spot">景</span><b>金森红砖仓库</b> → 酒店步行 10 分</div>
+        <div><span class="tag spot">景</span><b>八幡坂</b> → 坡道直对港口</div>
+        <div><span class="tag spot">景</span><b>函馆山缆车</b> → 世界三大夜景</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 天气穿搭 -->
+<section class="section" style="padding-top:0">
+  <div class="section-head">
+    <div class="kicker">WEATHER & PACKING</div>
+    <h2>2 月天气 & 双人穿搭清单</h2>
+    <p>北海道 2 月是隆冬，积雪约 1 米。两人出行建议叠穿+防水鞋，拍照时脱掉外套、拍完立刻穿上。</p>
+  </div>
+  <div class="weather-grid">
+    <div class="weather-card">
+      <h3>各城市 2 月气温参考</h3>
+      <table class="weather-table">
+        <thead><tr><th>城市</th><th>白天</th><th>夜间</th><th>体感</th></tr></thead>
+        <tbody>
+          <tr><td>札幌 / 小樽</td><td class="temp">0.1℃</td><td class="temp"><span class="low">-6.6℃</span></td><td>积雪 95cm+</td></tr>
+          <tr><td>旭川 / 美瑛</td><td class="temp">-2℃</td><td class="temp"><span class="low">-12℃</span></td><td>内陆干冷 -20℃</td></tr>
+          <tr><td>登别 / 洞爷</td><td class="temp">1℃</td><td class="temp"><span class="low">-5℃</span></td><td>温泉区雾气重</td></tr>
+          <tr><td>函馆</td><td class="temp">2℃</td><td class="temp"><span class="low">-3℃</span></td><td>海峡风大</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="weather-card">
+      <h3>双人打包清单</h3>
+      <ul class="pack-list">
+        <li>长款羽绒服（充绒 200g+）×2</li>
+        <li>防水高帮雪地靴 ×2</li>
+        <li class="warn">毛线帽 + 防水手套 ×2</li>
+        <li>厚围巾 / 脖套 ×2</li>
+        <li>加绒保暖裤 ×2 套</li>
+        <li>美利奴保暖内衣 ×2 套</li>
+        <li>暖宝宝（贴身+鞋款）</li>
+        <li>墨镜（防雪盲拍照用）</li>
+        <li>润唇膏 + 高保湿面霜</li>
+        <li class="warn">转换插头（两孔扁插）</li>
+        <li>充电宝（低温掉电快）</li>
+        <li>相机备用电池 ×2</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 每日行程 D1-D6 -->
+<section class="section tall" style="padding-top:0">
+  <div class="section-head">
+    <div class="kicker">DAY BY DAY</div>
+    <h2>每日详细行程</h2>
+    <p>每天标出<b style="color:#b85c1c">小红书打卡机位</b>（橙色块）和实用 Tip（蓝色块）。节奏松紧搭配，赶路日电车不超过 3 小时。</p>
+  </div>
+
+  <!-- D1 -->
+  <div class="day">
+    <div class="day-img"><img src="assets/sapporo-odori.jpg" alt="札幌大通公园"><span class="badge">DAY 1 · 2/17 周三</span><span class="stay-tag">住札幌</span></div>
+    <div class="day-body">
+      <div class="day-title"><span class="num">01</span><h3>上海浦东 → 东京羽田 → 札幌新千岁 → 札幌市区</h3></div>
+      <div class="day-date">红眼航班 + 羽田转机 · 12:40 落地新千岁</div>
+      <div class="day-schedule">
+        <div class="slot"><div class="t">凌晨</div><div class="c">02:35 PVG 乘 NH968，飞机上补觉。06:15 到羽田 T3，入境后转 T2 搭 NH61。</div></div>
+        <div class="slot"><div class="t">中午</div><div class="c">12:40 到新千岁 D 航站楼。入境后在 JR 旅行服务中心买 <b>JR 北海道 5 日券（D4 启用）</b>，搭快速エアポート 40 分钟到札幌站。</div></div>
+        <div class="slot evening"><div class="t">傍晚</div><div class="c">酒店放行李后步行到大通公园，看<b>白色灯树节</b>（到 2027/3/14）蓝白色灯海，远观札幌电视塔亮灯。</div></div>
+        <div class="slot"><div class="t">晚上</div><div class="c">薄野吃第一顿味噌拉面：「味の時計台」或「えびそば一幻」（虾味噌汤底）。狸小路商店街逛药妆。</div></div>
+      </div>
+      <div class="photo-spot"><b>打卡机位：</b>大通公园 Nishi 3-chome 段，以电视塔为背景仰拍灯海；蓝调时刻（日落后 20 分钟）最美。</div>
+      <div class="day-tips"><b>Tip：</b>羽田 T3→T2 搭免费摆渡巴士 15 分钟，4 小时转机时间够在羽田吃一碗 / 免税店逛逛。</div>
+    </div>
+  </div>
+
+  <!-- D2 -->
+  <div class="day">
+    <div class="day-img"><img src="assets/sapporo-odori.jpg" alt="札幌市区"><span class="badge">DAY 2 · 2/18 周四</span><span class="stay-tag">住札幌</span></div>
+    <div class="day-body">
+      <div class="day-title"><span class="num">02</span><h3>札幌慢游：北海道大学、啤酒博物馆、支笏湖冰涛祭</h3></div>
+      <div class="day-date">不赶路的一天，把札幌本地味道吃透</div>
+      <div class="day-schedule">
+        <div class="slot"><div class="t">上午</div><div class="c">北海道大学札幌校区，积雪中的白杨树并木 + 综合博物馆（免费），北大食堂吃羊肉咖喱。</div></div>
+        <div class="slot noon"><div class="t">中午</div><div class="c">札幌啤酒博物馆（红砖墙馆，免费参观+试饮），或大通旁「成吉思汗大通公园店」烤羊肉。</div></div>
+        <div class="slot evening"><div class="t">下午</div><div class="c"><b>推荐选项</b>：支笏湖冰涛祭（2027/1/30-2/23，正好赶上），札幌站搭中央巴士约 1h15min，晚上有夜间点灯，冰雕+蓝湖超出片。</div></div>
+        <div class="slot"><div class="t">晚上</div><div class="c">回薄野吃汤咖喱「GARAKU」或「奥芝法利」，饭后大通公园再看一次灯。</div></div>
+      </div>
+      <div class="photo-spot"><b>打卡机位：</b>北大白杨并木（雪地+林荫大道）；支笏湖冰涛祭夜间蓝冰灯光，广角低角度拍冰洞。</div>
+      <div class="day-tips"><b>Tip：</b>嫌支笏湖远就改「白色恋人公园」（城堡+巧克力工厂+灯海），地铁东西线终点站直达。</div>
+      <div class="gallery two">
+        <a><img src="assets/hokudai-poplar.jpg" alt="北海道大学白杨并木"><span class="cap">北海道大学白杨并木 · 雪中校园</span></a>
+        <a><img src="assets/shikotsu-ice.jpg" alt="支笏湖冰涛祭"><span class="cap">支笏湖冰涛祭 · 蓝冰夜灯</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- D3 -->
+  <div class="day">
+    <div class="day-img"><img src="assets/otaru-canal.jpg" alt="小樽运河"><span class="badge">DAY 3 · 2/19 周五</span><span class="stay-tag">住札幌</span></div>
+    <div class="day-body">
+      <div class="day-title"><span class="num">03</span><h3>小樽一日游：运河、船见坂、玻璃工坊、甜品</h3></div>
+      <div class="day-date">JR 函馆本线快速 32 分钟 · ¥750 · 当天往返</div>
+      <div class="day-schedule">
+        <div class="slot"><div class="t">上午</div><div class="c">札幌站搭 9:00 左右快速到小樽。先去<b>船见坂</b>（《情书》取景地），坡道尽头正对港口，清晨人少最好拍。</div></div>
+        <div class="slot noon"><div class="t">中午</div><div class="c">三角市场吃海鲜盖饭（海胆+三文鱼籽+扇贝），推荐「まるかつ」或「光宝」。</div></div>
+        <div class="slot evening"><div class="t">下午</div><div class="c">堺町通商业街：北一硝子馆（玻璃灯）、八音堂、LeTAO 本店双层芝士蛋糕、北菓楼「梦不思议」年轮蛋糕、Octasa 综合博物馆。</div></div>
+        <div class="slot"><div class="t">傍晚</div><div class="c">17:00 蓝调时刻回到运河，63 盏煤气灯准时点亮。运气好可以上<b>天狗山</b>缆车看小樽夜景（《情书》开头）。</div></div>
+      </div>
+      <div class="photo-spot"><b>打卡机位：</b>① 浅草桥 / 中央桥俯拍运河全景+煤气灯倒影；② 船见坂坡道尽头拍港口；③ 天狗山展望台（如时间够）俯瞰小樽港。</div>
+      <div class="day-tips"><b>Tip：</b>小樽雪灯之路通常在 2 月 7-14 日举办，2027/2/19 刚好错过，但运河煤气灯夜景本身全年都在。</div>
+      <div class="gallery two">
+        <a><img src="assets/otaru-canal.jpg" alt="小樽运河"><span class="cap">小樽运河 · 煤气灯蓝调</span></a>
+        <a><img src="assets/otaru-funamizaka.jpg" alt="船见坂"><span class="cap">船见坂 · 《情书》取景坡道</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- D4 -->
+  <div class="day">
+    <div class="day-img"><img src="assets/asahiyama-penguin.jpg" alt="旭山动物园企鹅巡游"><span class="badge">DAY 4 · 2/20 周六</span><span class="stay-tag">住旭川</span></div>
+    <div class="day-body">
+      <div class="day-title"><span class="num">04</span><h3>札幌 → 旭川：旭山动物园企鹅巡游</h3></div>
+      <div class="day-date">JR 特急カムイ 1h25min · ¥4810（JR Pass 首日）</div>
+      <div class="day-schedule">
+        <div class="slot"><div class="t">上午</div><div class="c">札幌站搭 9:00 特急カムイ到旭川，酒店存行李。旭川站 4 号巴士站台搭 41/42 号巴士约 40 分钟到旭山动物园。</div></div>
+        <div class="slot noon"><div class="t">中午</div><div class="c">动物园内食堂吃「水母拉面」（冬季限定），或看北极熊、海豹、猫头鹰。</div></div>
+        <div class="slot evening"><div class="t">下午</div><div class="c"><b>重点</b>：11:00 与 14:30 两场企鹅巡游（冬季限定），提前 15 分钟占步道两侧位置，企鹅会从你身边走过。</div></div>
+        <div class="slot"><div class="t">晚上</div><div class="c">回旭川站，「旭川拉面村」吃酱油拉面（青葉、一砂、さじき），或去 AEAO 大厦吃成吉思汗。</div></div>
+      </div>
+      <div class="photo-spot"><b>打卡机位：</b>企鹅巡游步道正前方低角度拍企鹅列队迎面走来；海豹馆圆窗正面拍海豹游过。</div>
+      <div class="day-tips"><b>Tip：</b>旭山动物园门票 ¥1000，企鹅巡游时间以官网当日公布为准。风极大，帽子手套一定要戴牢。</div>
+      <div class="gallery two">
+        <a><img src="assets/asahiyama-penguin.jpg" alt="企鹅巡游"><span class="cap">企鹅巡游 · 冬季限定</span></a>
+        <a><img src="assets/asahiyama-seal.jpg" alt="海豹圆窗"><span class="cap">海豹馆圆窗 · 圆窗构图</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- D5 -->
+  <div class="day">
+    <div class="day-img"><img src="assets/biei-blue-pond.jpg" alt="美瑛青池"><span class="badge">DAY 5 · 2/21 周日</span><span class="stay-tag">住旭川</span></div>
+    <div class="day-body">
+      <div class="day-title"><span class="num">05</span><h3>美瑛冬日绝景：青池、白须瀑布、拼布之路</h3></div>
+      <div class="day-date">JR 富良野线 30 分钟到美瑛 · 强烈建议搭「美瑛号」观光巴士</div>
+      <div class="day-schedule">
+        <div class="slot"><div class="t">上午</div><div class="c">旭川搭 8:30 列车到美瑛站，参加官方冬季「美瑛号」定期观光巴士（约 3h 环线，¥2500）。</div></div>
+        <div class="slot noon"><div class="t">中午</div><div class="c">途中停白须瀑布（青蓝色冰水从白雪中流下），四季彩之丘（雪中拼布农场）。</div></div>
+        <div class="slot evening"><div class="t">下午</div><div class="c"><b>重点：青池（青い池）</b>——冬季部分结冰，蓝绿色水面配雪中白桦，Mac 桌面同款。<b>17:00 起夜间点灯</b>到 21:00（2027/4/22 前），蓝色灯光打在冰池上像异次元。</div></div>
+        <div class="slot"><div class="t">晚上</div><div class="c">看完点灯回美瑛站搭车回旭川，晚上在旭川站 AEAO 吃汤咖喱或成吉思汗。</div></div>
+      </div>
+      <div class="photo-spot"><b>打卡机位：</b>① 青池桥梁上正面拍水面倒影；② 低角度把前景雪中白桦做框架；③ 夜间点灯后蓝调+蓝池，手机夜景模式直出。</div>
+      <div class="day-tips"><b>Tip：</b>冬季美瑛普通巴士班次极少，「美瑛号」必须提前在 JR 北海道官网预约。想等点灯的话要坐晚班巴士回旭川，注意末班时间。</div>
+      <div class="gallery two">
+        <a><img src="assets/biei-blue-pond.jpg" alt="青池白天"><span class="cap">青池白天 · 冰雪蓝绿</span></a>
+        <a><img src="assets/biei-illumination.jpg" alt="青池夜间点灯"><span class="cap">青池夜间点灯 · 17:00-21:00</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- D6 -->
+  <div class="day">
+    <div class="day-img"><img src="assets/noboribetsu-jigokudani.jpg" alt="登别地狱谷"><span class="badge">DAY 6 · 2/22 周一</span><span class="stay-tag">住登别温泉</span></div>
+    <div class="day-body">
+      <div class="day-title"><span class="num">06</span><h3>旭川 → 札幌 → 登别：泡汤日</h3></div>
+      <div class="day-date">JR 特急 旭川→札幌 1.5h → 札幌→登别 1h（Pass 内）</div>
+      <div class="day-schedule">
+        <div class="slot"><div class="t">上午</div><div class="c">旭川搭 9:00 特急回札幌，札幌站存大件行李，轻装出发。</div></div>
+        <div class="slot noon"><div class="t">中午</div><div class="c">札幌站「拉面共和国」吃最后一碗札幌味噌拉面，搭 13:30 特急到登别站，转道南巴士 15 分钟到温泉街。</div></div>
+        <div class="slot evening"><div class="t">下午</div><div class="c">办理<b>第一滝本馆</b>一泊二食入住，步行登地狱谷散步道（30 分钟环线）看硫磺喷气、大汤沼。</div></div>
+        <div class="slot"><div class="t">晚上</div><div class="c">温泉街吃温泉馒头、地狱谷烤地瓜。回旅馆泡大浴场（1500 坪、7 种泉质），晚餐是蟹腿+海鲜自助。</div></div>
+      </div>
+      <div class="photo-spot"><b>打卡机位：</b>地狱谷木栈道俯拍硫磺白烟+积雪火山岩；旅馆落地窗拍雪景喝茶。</div>
+      <div class="day-tips"><b>Tip：</b>第一滝本馆一泊二食两人约 ¥28,000-40,000 日元（¥1400-2000），含晚餐自助蟹腿+早餐海鲜，提前 2 个月订最便宜。</div>
+    </div>
+  </div>
+
+  <!-- D7 -->
+  <div class="day">
+    <div class="day-img"><img src="assets/hakodate-night.jpg" alt="洞爷湖与函馆"><span class="badge">DAY 7 · 2/23 周二</span><span class="stay-tag">住函馆</span></div>
+    <div class="day-body">
+      <div class="day-title"><span class="num">07</span><h3>登别 → 洞爷湖 → 函馆：火山与海湾</h3></div>
+      <div class="day-date">JR 登别→洞爷 30min → 洞爷→函馆特急北斗 2h（Pass 内）</div>
+      <div class="day-schedule">
+        <div class="slot"><div class="t">上午</div><div class="c">退房后从登别搭 JR 到洞爷站（25 分钟），洞爷湖散步、看火山有珠山展望台（冬季游览船停航，改坐巴士到山顶）。</div></div>
+        <div class="slot noon"><div class="t">中午</div><div class="c">洞爷湖畔吃洞岛烤肉或咖喱饭，搭 13:30 特急「北斗」直奔函馆。</div></div>
+        <div class="slot evening"><div class="t">下午</div><div class="c">16:00 到函馆 La Vista Bay 酒店放行李，步行到元町逛西洋馆（元町教会群、旧公会堂、八幡坂坡道）。</div></div>
+        <div class="slot"><div class="t">晚上</div><div class="c"><b>重点</b>：搭函馆山缆车（¥1800 往返）上山顶，<b>世界三大夜景之一的百万夜景</b>，海岸线灯光像钻石粉。</div></div>
+      </div>
+      <div class="photo-spot"><b>打卡机位：</b>① 八幡坂坡道尽头拍港口（《情书》既视感）；② 函馆山山顶展望台拍海湾双曲线夜景；③ 酒店顶楼温泉泡汤时看夜景。</div>
+      <div class="day-tips"><b>Tip：</b>函馆山缆车风大，山顶比市区低 5-8℃，17:30 前上去占位置。回到 La Vista 顶楼温泉还能再看一次夜景。</div>
+    </div>
+  </div>
+
+  <!-- D8 -->
+  <div class="day">
+    <div class="day-img"><img src="assets/hakodate-night.jpg" alt="函馆一日"><span class="badge">DAY 8 · 2/24 周三</span><span class="stay-tag">住函馆</span></div>
+    <div class="day-body">
+      <div class="day-title"><span class="num">08</span><h3>函馆一日：朝市、红砖仓库、猴子泡温泉</h3></div>
+      <div class="day-date">函馆市内巴士 + 步行为主</div>
+      <div class="day-schedule">
+        <div class="slot"><div class="t">上午</div><div class="c">函馆朝市开门就去，吃「活イカ踊り」鱿鱼刺身（现捞现切）、海鲜三色丼，站着吃站着逛。</div></div>
+        <div class="slot noon"><div class="t">中午</div><div class="c">金森红砖仓库群喝函馆啤酒、吃「幸运小丑汉堡」（中华鸡肉串烧汉堡，函馆灵魂）。</div></div>
+        <div class="slot evening"><div class="t">下午</div><div class="c"><b>隐藏彩蛋</b>：热带植物园（巴士约 20 分钟），看日本猴子冬天泡温泉（11:00-16:00 营业），超治愈。</div></div>
+        <div class="slot"><div class="t">晚上</div><div class="c">函馆站附近海鲜居酒屋，或者回 La Vista 吃传奇早餐预约的晚餐（酒店早餐连续 7 年北海道第一）。</div></div>
+      </div>
+      <div class="photo-spot"><b>打卡机位：</b>① 朝市摊位端着海鲜丼拍俯拍；② 红砖仓库前雪景+海港；③ 植物园猴子泡温泉（长焦）。</div>
+      <div class="day-tips"><b>Tip：</b>La Vista 早餐含自助海鲜丼（自己铺海胆、三文鱼籽、螃蟹），建议第二天早上吃，值回房价。</div>
+      <div class="gallery">
+        <a><img src="assets/hakodate-hachiman.jpg" alt="八幡坂"><span class="cap">八幡坂 · 坡道港口</span></a>
+        <a><img src="assets/hakodate-redbrick.jpg" alt="红砖仓库"><span class="cap">金森红砖仓库 · 冬夜</span></a>
+        <a><img src="assets/hakodate-seafood.jpg" alt="海鲜丼"><span class="cap">函馆朝市海鲜丼</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- D9 -->
+  <div class="day">
+    <div class="day-img"><img src="assets/sapporo-odori.jpg" alt="返回札幌"><span class="badge">DAY 9 · 2/25 周四</span><span class="stay-tag">住札幌</span></div>
+    <div class="day-body">
+      <div class="day-title"><span class="num">09</span><h3>函馆 → 札幌：返程北上 + 购物</h3></div>
+      <div class="day-date">特急北斗 4 小时 · 建议早班车（Pass 最后一天）</div>
+      <div class="day-schedule">
+        <div class="slot"><div class="t">上午</div><div class="c">酒店吃完传奇早餐后，函馆朝市最后吃一顿，搭 9:00 特急北斗回札幌（车上看窗外雪景补觉）。</div></div>
+        <div class="slot noon"><div class="t">中午</div><div class="c">14:00 到札幌，回酒店放行李。</div></div>
+        <div class="slot evening"><div class="t">下午</div><div class="c">札幌站 / 大通：大丸、PARCO、ESTA、堂吉诃德，采购白色恋人、六花亭、薯条三兄弟、Royce 巧克力、药妆。</div></div>
+        <div class="slot"><div class="t">晚上</div><div class="c">札幌啤酒园喝啤酒+成吉思汗烤肉，或大通旁「汤咖喱 GARAKU」收尾。</div></div>
+      </div>
+      <div class="photo-spot"><b>打卡机位：</b>札幌站南口喷泉广场雪夜景；白色恋人公园城堡（如时间够）。</div>
+      <div class="day-tips"><b>Tip：</b>伴手礼在札幌站 B1「北海道どさんこプラザ」一站式买齐，比机场便宜、不用排队。</div>
+    </div>
+  </div>
+
+  <!-- D10 -->
+  <div class="day">
+    <div class="day-img"><img src="assets/otaru-canal.jpg" alt="札幌机动日"><span class="badge">DAY 10 · 2/26 周五</span><span class="stay-tag">住札幌</span></div>
+    <div class="day-body">
+      <div class="day-title"><span class="num">10</span><h3>札幌机动日：滑雪初体验 / 定山溪温泉 / 补打卡</h3></div>
+      <div class="day-date">灵活安排日，三选一</div>
+      <div class="day-schedule">
+        <div class="slot"><div class="t">选项 A</div><div class="c"><b>札幌国际滑雪场</b>：札幌駅北口搭巴士 1 小时，初学者一日套票 ¥5000-6000（含装备+教练），两人第一次滑雪强推。</div></div>
+        <div class="slot noon"><div class="t">选项 B</div><div class="c"><b>定山溪温泉一日游</b>：札幌站搭巴士 1 小时，山里温泉街 + 雪灯盏（2 月有定山溪温泉雪祭），治愈系。</div></div>
+        <div class="slot evening"><div class="t">选项 C</div><div class="c"><b>札幌市内补打卡</b>：北海道厅旧本厅舍、时计台、北海道大学植物园、薄野不夜天，轻松 citywalk。</div></div>
+        <div class="slot"><div class="t">晚上</div><div class="c">提早回酒店整理行李，把托运行李包好。明天 12:30 飞机，9:30 要从札幌出发去机场。</div></div>
+      </div>
+      <div class="day-tips"><b>Tip：</b>ANA 经济舱含 2 件 23kg 托运，伴手礼随便买。今晚把要退税的单子集中放一起。</div>
+    </div>
+  </div>
+
+  <!-- D11 -->
+  <div class="day">
+    <div class="day-img"><img src="assets/sapporo-odori.jpg" alt="返程"><span class="badge">DAY 11 · 2/27 周六</span><span class="stay-tag">回家</span></div>
+    <div class="day-body">
+      <div class="day-title"><span class="num">11</span><h3>新千岁 → 东京羽田 → 上海浦东</h3></div>
+      <div class="day-date">12:30 起飞 · 10:00 前必须到机场</div>
+      <div class="day-schedule">
+        <div class="slot"><div class="t">上午</div><div class="c">酒店退房，札幌站 9:30 搭快速エアポート到新千岁（40 分钟）。</div></div>
+        <div class="slot noon"><div class="t">中午</div><div class="c">新千岁机场是全日本最好逛的机场：哆啦A梦乐园、北海道ラーメン道場、Royce 巧克力工厂、伴手礼一条街。安检前把想买的买完。</div></div>
+        <div class="slot evening"><div class="t">下午</div><div class="c">12:30 搭 NH62 飞羽田，14:10 到。羽田机场 T2 国际线再逛 4 小时，18:40 搭 NH971。</div></div>
+        <div class="slot"><div class="t">晚上</div><div class="c">21:25 到上海浦东 T2，回家。</div></div>
+      </div>
+      <div class="day-tips"><b>Tip：</b>新千岁机场安检前的「北海道物产店」比安检后便宜，想买的在安检前买完。羽田转机 4 小时够吃一顿拉面。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 酒店推荐 -->
+<section class="section tall" style="padding-top:0">
+  <div class="section-head">
+    <div class="kicker">WHERE TO STAY</div>
+    <h2>两人酒店推荐（标准间 / 双床）</h2>
+    <p>按携程 / 去哪儿 2 月非周末双床房均价估算，人民币按 1 日元 ≈ 0.05 元。强烈建议提前 2-3 个月订可免费取消的方案。</p>
+  </div>
+  <div class="hotel-grid">
+    <div class="hotel-card">
+      <div class="city">札幌 · 5 晚（D1-3, D9-10）</div>
+      <h4>札幌薄野大和ROYNET酒店</h4>
+      <div class="zh">Daiwa Roynet Hotel Sapporo-Susukino</div>
+      <div class="price">¥700-900 <small>/ 晚 / 双床房</small></div>
+      <ul>
+        <li>薄野站步行 3 分钟，地铁南北线 + 丰水站步行 5 分钟</li>
+        <li>3 星+水平，房间比同价位宽敞，双床房可摊开 2 个 28 寸箱</li>
+        <li>对面就是拉面横丁，狸小路步行 8 分钟</li>
+      </ul>
+      <div class="highlight">备选：Hotel Vista Sapporo Odori（大通狸小路，后门直通商店街）、Tmark City Sapporo（薄野性价比之王 ¥500-700）</div>
+    </div>
+
+    <div class="hotel-card">
+      <div class="city">旭川 · 2 晚（D4-5）</div>
+      <h4>OMO7 旭川 by 星野集团</h4>
+      <div class="zh">OMO7 Asahikawa by Hoshino Resorts</div>
+      <div class="price">¥900-1300 <small>/ 晚 / 双床房</small></div>
+      <ul>
+        <li>旭川站步行 5 分钟，设计感强，小红书网红</li>
+        <li>有「旭川迷巡逻」免费导览（晚间 local 导览）</li>
+        <li>早餐含当地拉面、成吉思汗</li>
+      </ul>
+      <div class="highlight">省钱备选：KOKO Hotel 旭川站前（¥500-700）、Y's Hotel 旭川站前（对面就是 JR 站 ¥450-600）</div>
+    </div>
+
+    <div class="hotel-card">
+      <div class="city">登别 · 1 晚（D6）</div>
+      <h4>第一滝本馆（一泊二食）</h4>
+      <div class="zh">Dai-ichi Takimotokan</div>
+      <div class="price">¥1400-2000 <small>/ 两人含早晚餐</small></div>
+      <ul>
+        <li>登别温泉街中心，步行 5 分钟到地狱谷</li>
+        <li>1500 坪大浴场、7 种泉质，露天雪景温泉</li>
+        <li>晚餐自助蟹腿+海鲜+寿司，早餐海鲜丼</li>
+      </ul>
+      <div class="highlight">订房时认准「1 泊 2 食」方案，两人 28,000-40,000 日元。南馆和式房空间大，可住 4 人。</div>
+    </div>
+
+    <div class="hotel-card">
+      <div class="city">函馆 · 2 晚（D7-8）</div>
+      <h4>拉碧斯达函馆湾</h4>
+      <div class="zh">La Vista Hakodate Bay</div>
+      <div class="price">¥1000-1500 <small>/ 晚 / 双床房</small></div>
+      <ul>
+        <li>函馆红砖仓库旁，步行到函馆站 15 分钟</li>
+        <li>13 楼顶楼天然温泉，直面函馆山+港湾夜景</li>
+        <li>早餐连续 7 年北海道第一（自助海鲜丼 DIY）</li>
+        <li>泡完免费冰棒</li>
+      </ul>
+      <div class="highlight">小红书爆款，订房时选「港侧」房能直接在房间看函馆山夜景。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 交通 -->
+<section class="section" style="padding-top:0">
+  <div class="section-head">
+    <div class="kicker">GETTING AROUND</div>
+    <h2>JR Pass & 市内交通</h2>
+  </div>
+  <div class="transport">
+    <div class="t-card">
+      <h3>JR 北海道铁路周游券（5 日）</h3>
+      <ul>
+        <li><span>5 日券（推荐）</span><span class="v">¥20,000 ≈ ¥950</span></li>
+        <li><span>启用日</span><span class="v">D4（2/20）开始</span></li>
+        <li><span>覆盖长途</span><span class="v">札幌-旭川、札幌-登别-函馆</span></li>
+        <li><span>购买点</span><span class="v">新千岁机场 JR 旅行店</span></li>
+        <li><span>护照</span><span class="v">必须带原件</span></li>
+      </ul>
+      <p style="font-size:12px;color:var(--ink-soft);margin-top:10px">D4-D8 共 5 天，Pass 覆盖所有特急（カムイ、北斗）。D9 函馆→札幌单程就要 ¥9,000，Pass 直接回本。</p>
+    </div>
+    <div class="t-card">
+      <h3>市内交通 & 其他</h3>
+      <ul>
+        <li><span>札幌地铁（南北/东西/东丰）</span><span class="v">一日券 ¥1000</span></li>
+        <li><span>新千岁↔札幌快速エアポート</span><span class="v">¥1150 · 40min</span></li>
+        <li><span>札幌↔小樽 JR</span><span class="v">¥750 · 32min</span></li>
+        <li><span>旭川↔美瑛 JR</span><span class="v">¥650 · 30min</span></li>
+        <li><span>美瑛号观光巴士</span><span class="v">¥2500 · 3h</span></li>
+        <li><span>函馆山缆车往返</span><span class="v">¥1800</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 美食 -->
+<section class="section" style="padding-top:0">
+  <div class="section-head">
+    <div class="kicker">MUST EAT</div>
+    <h2>北海道必吃 8 选</h2>
+  </div>
+  <div class="food-grid">
+    <div class="food"><div class="fnum">01</div><h4>札幌味噌拉面</h4><p>味の時計台、えびそば一幻、GARAKU 汤咖喱</p></div>
+    <div class="food"><div class="fnum">02</div><h4>成吉思汗烤肉</h4><p>札幌 Beer Garden / 旭川松尾成吉思汗</p></div>
+    <div class="food"><div class="fnum">03</div><h4>LeTAO 双层芝士</h4><p>小樽本店现切最好吃</p></div>
+    <div class="food"><div class="fnum">04</div><h4>小樽三角市场海鲜丼</h4><p>海胆+三文鱼籽+扇贝</p></div>
+    <div class="food"><div class="fnum">05</div><h4>旭山动物园水母拉面</h4><p>冬季限定，水母造型超可爱</p></div>
+    <div class="food"><div class="fnum">06</div><h4>函馆朝市活イカ</h4><p>现捞现切，一碗 ¥1500</p></div>
+    <div class="food"><div class="fnum">07</div><h4>幸运小丑汉堡</h4><p>函馆灵魂，中华鸡肉串烧汉堡</p></div>
+    <div class="food"><div class="fnum">08</div><h4>登别温泉馒头</h4><p>地狱谷硫磺蒸出来的</p></div>
+  </div>
+</section>
+
+<!-- 餐厅地图与位置 -->
+<section class="section tall" style="padding-top:0">
+  <div class="section-head">
+    <div class="kicker">RESTAURANT GUIDE</div>
+    <h2>各城市必吃餐厅位置</h2>
+    <p>按城市整理，地址都是 Google Maps 直接可搜的招牌名。人均为两人一顿的参考价（人民币）。</p>
+  </div>
+  <table class="restaurant-table">
+    <thead><tr><th style="width:14%">城市</th><th style="width:22%">餐厅</th><th style="width:30%">地址 / 位置</th><th style="width:24%">招牌菜</th><th style="width:10%" class="num" style="text-align:right">人均</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="4" style="background:#f5f9fc;font-weight:700;color:var(--winter)">札幌</td>
+        <td class="name">味の時計台 本店</td><td class="addr">中央区南4条西6丁目，薄野步行 3 分钟</td><td>味噌拉面（¥950）</td><td class="price">¥50</td></tr>
+      <tr><td class="name">えびそば一幻 本店</td><td class="addr">中央区南6条西9丁目，薄野</td><td>虾味噌拉面（浓厚虾汤）</td><td class="price">¥60</td></tr>
+      <tr><td class="name">GARAKU 汤咖喱</td><td class="addr">中央区南2条西2丁目，大通步行 5 分钟</td><td>汤咖喱+煎鸡肉</td><td class="price">¥80</td></tr>
+      <tr><td class="name">札幌啤酒园</td><td class="addr">东区北11条东7丁目，地铁东区役所前</td><td>成吉思汗烤肉+啤酒</td><td class="price">¥200</td></tr>
+
+      <tr><td rowspan="3" style="background:#f5f9fc;font-weight:700;color:var(--winter)">小樽</td>
+        <td class="name">LeTAO 本店</td><td class="addr">小樽市堺町通，三角市场旁</td><td>双层芝士蛋糕（现切）</td><td class="price">¥40</td></tr>
+      <tr><td class="name">北菓楼 本馆</td><td class="addr">小樽市堺町16-15</td><td>梦不思议年轮蛋糕</td><td class="price">¥30</td></tr>
+      <tr><td class="name">三角市场 まるかつ</td><td class="addr">小樽市稻穂2-20-1</td><td>海鲜三色丼（海胆+鲑鱼籽+扇贝）</td><td class="price">¥150</td></tr>
+
+      <tr><td rowspan="3" style="background:#f5f9fc;font-weight:700;color:var(--winter)">旭川</td>
+        <td class="name">青葉 本店</td><td class="addr">旭川市一条通8丁目，拉面村</td><td>传统酱油拉面</td><td class="price">¥55</td></tr>
+      <tr><td class="name">ラーメン村 一砂</td><td class="addr">旭川市富士见1条，JR 旭川站搭巴士 15 分</td><td>鱼介豚骨拉面</td><td class="price">¥60</td></tr>
+      <tr><td class="name">松尾成吉思汗 本店</td><td class="addr">旭川市二条通9丁目</td><td>成吉思汗烤羊肉</td><td class="price">¥150</td></tr>
+
+      <tr><td style="background:#f5f9fc;font-weight:700;color:var(--winter)">美瑛</td>
+        <td class="name">大野商店</td><td class="addr">美瑛町本街，美瑛站步行 5 分</td><td>美瑛牛咖喱饭</td><td class="price">¥70</td></tr>
+
+      <tr><td style="background:#f5f9fc;font-weight:700;color:var(--winter)">登别</td>
+        <td class="name">第一滝本馆 自助餐</td><td class="addr">登别温泉町55，旅馆晚餐含</td><td>蟹腿+海鲜自助</td><td class="price">含住宿</td></tr>
+
+      <tr><td rowspan="4" style="background:#f5f9fc;font-weight:700;color:var(--winter)">函馆</td>
+        <td class="name">函馆朝市 うにむら</td><td class="addr">函馆市若松町9-15，JR 函馆站步行 1 分</td><td>活イカ踊り+海胆丼</td><td class="price">¥150</td></tr>
+      <tr><td class="name">幸运小丑 本店</td><td class="addr">函馆市千代崎町18-15</td><td>中华鸡肉串烧汉堡</td><td class="price">¥50</td></tr>
+      <tr><td class="name">ラッキーピエロ ベイエリア本店</td><td class="addr">函馆市丰川町12-6，La Vista 旁</td><td>芝士汉堡+薯条</td><td class="price">¥60</td></tr>
+      <tr><td class="name">La Vista 早餐自助</td><td class="addr">函馆市丰川町12-6，旅馆早餐含</td><td>DIY 海鲜丼+汤咖喱</td><td class="price">含住宿</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 预算 -->
+<section class="section" style="padding-top:0">
+  <div class="budget">
+    <h3>双人预算估算（人民币）</h3>
+    <table class="budget-table">
+      <thead><tr><th>项目</th><th>说明</th><th class="num">两人合计</th></tr></thead>
+      <tbody>
+        <tr><td>ANA 往返机票</td><td>经羽田中转，含 23kg×2 托运</td><td class="num">¥5,000-7,000</td></tr>
+        <tr><td>JR Pass 5 日券 ×2</td><td>D4-D8 覆盖长途特急</td><td class="num">¥1,900</td></tr>
+        <tr><td>市内交通 / 巴士</td><td>地铁、美瑛号、缆车等</td><td class="num">¥800</td></tr>
+        <tr><td>住宿 10 晚</td><td>札幌 5 + 旭川 2 + 登别 1 + 函馆 2</td><td class="num">¥10,000-13,000</td></tr>
+        <tr><td>餐饮 11 天</td><td>含 1 顿登别会席、1 顿 La Vista 早餐</td><td class="num">¥5,000</td></tr>
+        <tr><td>景点门票</td><td>动物园、函馆山、青池点灯等</td><td class="num">¥1,200</td></tr>
+        <tr><td>伴手礼 / 药妆</td><td>白色恋人、Royce、药妆</td><td class="num">¥3,000</td></tr>
+        <tr><td>签证 / 保险 / 流量卡</td><td>单次旅游签证+流量卡×2</td><td class="num">¥1,200</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="2">双人合计</td><td class="num">约 ¥28,000-31,000</td></tr></tfoot>
+    </table>
+    <p style="font-size:13px;opacity:.7;margin-top:14px">人均约 ¥14,000-15,500。ANA 机票价格浮动大，提前 4-6 个月订最便宜。</p>
+  </div>
+</section>
+
+<div class="footer">
+  <p>北海道の冬 · 2027.02.17 - 02.27 · ANA 经羽田往返 · 双人 11 日行程</p>
+  <p style="margin-top:6px">航班时刻与酒店价格为参考，请以预订时实际查询为准。</p>
+</div>
+</body>
+</html>
