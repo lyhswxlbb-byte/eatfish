@@ -77,6 +77,17 @@
       "status": "active",
       "updated_at": "2026-09-24T17:08:46+08:00",
       "created_at": "2026-09-24T17:08:46+08:00"
+    },
+    {
+      "name": "家具双十一追踪",
+      "slug": "furniture-d11-tracking",
+      "source_url": "https://e75a8a99d036.aime-site.bytedance.net/",
+      "directory": "projects/furniture-d11-tracking/",
+      "public_url": "https://lyhswxlbb-byte.github.io/eatfish/projects/furniture-d11-tracking/",
+      "owner": "liuyinghong.22",
+      "status": "active",
+      "updated_at": "2026-10-09T14:41:41+08:00",
+      "created_at": "2026-10-09T14:41:41+08:00"
     }
   ]
 }
