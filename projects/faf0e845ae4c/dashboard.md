@@ -1,3 +1,7 @@
+---
+layout: null
+permalink: /projects/faf0e845ae4c/dashboard.html
+---
 <!DOCTYPE html><html><head><script>window.webApplicationManifest={name:"\u767d\u9152\u5343\u5ddd\u4f18\u8d28\u7d20\u6750\u770b\u677f",version:"1.0.0",needAuth:!0,feishuResourceBindings:[{bindingId:"premiumMaterials",resourceType:"bitableRecords",appToken:"B22ybrBxyacExXsqi6Rcnrudnk2",tableId:"tblH1ViakZgPr98n"}]},window.__AEOLUS_FEISHU_SEND_BINDING__=!0</script><script>
             ;(function(){
               window._MODERNJS_ROUTE_MANIFEST = {"routeAssets":{"main":{"chunkIds":[408,783,535,493,192,889]},"page":{"chunkIds":[744,807]}}};
