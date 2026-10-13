@@ -4,10 +4,28 @@
   <title>九牛集团年度框架政策完成进度看板</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
   <style>
     :root{--ink:#243042;--muted:#69758a;--brand:#8b5a2b;--gold:#c89b56;--green:#1f9d74;--orange:#df7b2a;--red:#c95d55;--paper:#fffaf1;--card:#ffffffcc}
-    *{box-sizing:border-box} body{font-family:'Noto Sans SC',system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 8% 6%,#fff2cf 0,#fff2cf55 30%,transparent 46%),linear-gradient(135deg,#fffaf1 0%,#f7efe1 42%,#eef4f0 100%);min-height:100vh}.grain{position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:url('data:image/svg+xml,%3Csvg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)" opacity="0.20"/%3E%3C/svg%3E')}.glass{background:rgba(255,255,255,.72);backdrop-filter:blur(16px);border:1px solid rgba(139,90,43,.12);box-shadow:0 24px 70px rgba(86,62,29,.12)}.metric-card{transition:.28s ease;position:relative;overflow:hidden}.metric-card:before{content:"";position:absolute;inset:auto -30% -55% -30%;height:90px;background:linear-gradient(90deg,transparent,rgba(200,155,86,.16),transparent);transform:rotate(-7deg)}.metric-card:hover{transform:translateY(-4px);box-shadow:0 26px 60px rgba(86,62,29,.16)}.progress-track{height:12px;background:#ede2d1;border-radius:999px;overflow:hidden}.progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#c89b56,#1f9d74);box-shadow:0 0 18px rgba(31,157,116,.28)}.warning{background:linear-gradient(135deg,#fff7e9,#fff1e4);border:1px solid #f3cfaa}.risk{background:linear-gradient(135deg,#fff5f3,#fff9f3);border:1px solid #efc8c2}.ok{background:linear-gradient(135deg,#effbf5,#f8fff9);border:1px solid #bfe7d5}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600}.tab{border-radius:999px;padding:9px 14px;font-weight:700;color:#6f5a43;transition:.2s}.tab.active{background:#2f4237;color:#fff;box-shadow:0 12px 24px rgba(47,66,55,.2)}.chart{min-height:300px}.bar-wrap{display:grid;grid-template-columns:96px 1fr 74px;gap:12px;align-items:center;margin:18px 0}.bar-bg{height:28px;border-radius:999px;background:#efe5d6;overflow:hidden;box-shadow:inset 0 2px 8px rgba(86,62,29,.08)}.bar-done{height:100%;border-radius:999px;background:linear-gradient(90deg,#c89b56,#1f9d74);position:relative}.bar-done.orange{background:linear-gradient(90deg,#df7b2a,#c89b56)}.bar-done:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);animation:glide 2.8s infinite}@keyframes glide{from{transform:translateX(-100%)}to{transform:translateX(100%)}}.shine{background:linear-gradient(90deg,#8b5a2b,#c89b56,#2f6c54);-webkit-background-clip:text;color:transparent}.table-row:hover{background:#fff8ec}.stamp{border:1px dashed rgba(139,90,43,.32);background:rgba(255,250,241,.74)}
+    *{box-sizing:border-box} body{font-family:'Noto Sans SC',system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 8% 6%,#fff2cf 0,#fff2cf55 30%,transparent 46%),linear-gradient(135deg,#fffaf1 0%,#f7efe1 42%,#eef4f0 100%);min-height:100vh}
+    .grain{position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:url('data:image/svg+xml,%3Csvg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)" opacity="0.20"/%3E%3C/svg%3E')}
+    .glass{background:rgba(255,255,255,.72);backdrop-filter:blur(16px);border:1px solid rgba(139,90,43,.12);box-shadow:0 24px 70px rgba(86,62,29,.12)}
+    .metric-card{transition:.28s ease;position:relative;overflow:hidden}
+    .metric-card:before{content:"";position:absolute;inset:auto -30% -55% -30%;height:90px;background:linear-gradient(90deg,transparent,rgba(200,155,86,.16),transparent);transform:rotate(-7deg)}
+    .metric-card:hover{transform:translateY(-4px);box-shadow:0 26px 60px rgba(86,62,29,.16)}
+    .progress-track{height:12px;background:#ede2d1;border-radius:999px;overflow:hidden}
+    .progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#c89b56,#1f9d74);box-shadow:0 0 18px rgba(31,157,116,.28)}
+    .warning{background:linear-gradient(135deg,#fff7e9,#fff1e4);border:1px solid #f3cfaa}
+    .risk{background:linear-gradient(135deg,#fff5f3,#fff9f3);border:1px solid #efc8c2}
+    .ok{background:linear-gradient(135deg,#effbf5,#f8fff9);border:1px solid #bfe7d5}
+    .pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600}
+    .shine{background:linear-gradient(90deg,#8b5a2b,#c89b56,#2f6c54);-webkit-background-clip:text;color:transparent}
+    .stamp{border:1px dashed rgba(139,90,43,.32);background:rgba(255,250,241,.74)}
+    .bar-wrap{display:grid;grid-template-columns:96px 1fr 74px;gap:12px;align-items:center;margin:18px 0}
+    .bar-bg{height:28px;border-radius:999px;background:#efe5d6;overflow:hidden;box-shadow:inset 0 2px 8px rgba(86,62,29,.08)}
+    .bar-done{height:100%;border-radius:999px;background:linear-gradient(90deg,#c89b56,#1f9d74);position:relative}
+    .bar-done.orange{background:linear-gradient(90deg,#df7b2a,#c89b56)}
+    .bar-done:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);animation:glide 2.8s infinite}
+    @keyframes glide{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
   </style>
 </head>
 <body>
@@ -20,7 +38,7 @@
         <div>
           <div class="flex flex-wrap items-center gap-3 mb-4">
             <span class="pill bg-[#2f4237] text-white"><span>📊</span>客户进度看板</span>
-            <span class="pill bg-white/70 text-[#8b5a2b]">数据截至 2026-10-11</span>
+            <span class="pill bg-white/70 text-[#8b5a2b]">数据截至 2026-10-12</span>
             <span class="pill bg-white/70 text-[#2f6c54]">政策号 KHNK20260306164177</span>
           </div>
           <h1 class="text-3xl md:text-6xl font-black leading-tight tracking-tight">九牛集团<br><span class="shine">年度框架政策完成进度</span></h1>
@@ -29,39 +47,49 @@
         <div class="stamp rounded-3xl p-5 min-w-[260px]">
           <div class="text-sm text-[#69758a]">政策名称</div>
           <div class="font-extrabold text-xl mt-1">河南碧春商贸有限公司-年度框架政策</div>
-          <div class="mt-4 grid grid-cols-2 gap-3 text-sm"><div><div class="text-[#69758a]">政策年度</div><div class="font-bold">2026</div></div><div><div class="text-[#69758a]">时间进度</div><div class="font-bold">77.81%</div></div></div>
+          <div class="mt-4 grid grid-cols-2 gap-3 text-sm"><div><div class="text-[#69758a]">政策年度</div><div class="font-bold">2026</div></div><div><div class="text-[#69758a]">时间进度</div><div class="font-bold">78.08%</div></div></div>
         </div>
       </div>
     </section>
 
     <section class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6">
-      <div class="metric-card glass rounded-[28px] p-6"><div class="flex justify-between items-start"><div><p class="text-[#69758a] font-semibold">框架总目标金额</p><h2 class="text-3xl font-black mt-2">1.76 亿</h2></div><span class="text-4xl">🏁</span></div><div class="mt-5 progress-track"><div class="progress-fill" style="width:72.55%"></div></div><div class="mt-3 flex justify-between text-sm"><span>已完成 1.28 亿</span><strong>72.55%</strong></div></div>
-      <div class="metric-card glass rounded-[28px] p-6"><div class="flex justify-between items-start"><div><p class="text-[#69758a] font-semibold">效果目标金额</p><h2 class="text-3xl font-black mt-2">1.08 亿</h2></div><span class="text-4xl">📈</span></div><div class="mt-5 progress-track"><div class="progress-fill" style="width:91.11%"></div></div><div class="mt-3 flex justify-between text-sm"><span>已完成 9840.90 万</span><strong class="text-[#1f9d74]">91.11%</strong></div></div>
-      <div class="metric-card glass rounded-[28px] p-6"><div class="flex justify-between items-start"><div><p class="text-[#69758a] font-semibold">品星目标金额</p><h2 class="text-3xl font-black mt-2">6800 万</h2></div><span class="text-4xl">📣</span></div><div class="mt-5 progress-track"><div class="progress-fill" style="width:43.05%;background:linear-gradient(90deg,#df7b2a,#c89b56)"></div></div><div class="mt-3 flex justify-between text-sm"><span>已完成 2928.05 万</span><strong class="text-[#df7b2a]">43.05%</strong></div></div>
+      <div class="metric-card glass rounded-[28px] p-6"><div class="flex justify-between items-start"><div><p class="text-[#69758a] font-semibold">框架总目标金额</p><h2 class="text-3xl font-black mt-2">1.76 亿</h2></div><span class="text-4xl">🏁</span></div><div class="mt-5 progress-track"><div class="progress-fill" style="width:72.76%"></div></div><div class="mt-3 flex justify-between text-sm"><span>已完成 1.28 亿</span><strong>72.76%</strong></div></div>
+      <div class="metric-card glass rounded-[28px] p-6"><div class="flex justify-between items-start"><div><p class="text-[#69758a] font-semibold">效果目标金额</p><h2 class="text-3xl font-black mt-2">1.08 亿</h2></div><span class="text-4xl">📈</span></div><div class="mt-5 progress-track"><div class="progress-fill" style="width:91.34%"></div></div><div class="mt-3 flex justify-between text-sm"><span>已完成 9865.48 万</span><strong class="text-[#1f9d74]">91.34%</strong></div></div>
+      <div class="metric-card glass rounded-[28px] p-6"><div class="flex justify-between items-start"><div><p class="text-[#69758a] font-semibold">品星目标金额</p><h2 class="text-3xl font-black mt-2">6800.00 万</h2></div><span class="text-4xl">📣</span></div><div class="mt-5 progress-track"><div class="progress-fill" style="width:43.24%;background:linear-gradient(90deg,#df7b2a,#c89b56)"></div></div><div class="mt-3 flex justify-between text-sm"><span>已完成 2940.46 万</span><strong class="text-[#df7b2a]">43.24%</strong></div></div>
     </section>
 
     <section class="grid grid-cols-1 lg:grid-cols-5 gap-6 mt-6">
-      <div class="glass rounded-[30px] p-6 lg:col-span-3"><div class="flex flex-wrap justify-between gap-4 items-center mb-4"><div><h3 class="text-2xl font-black">目标完成结构</h3><p class="text-[#69758a] mt-1">目标金额、已消耗与剩余缺口对比</p></div><div class="flex gap-2"><button class="tab active" data-chart="amount">金额</button><button class="tab" data-chart="rate">完成率</button></div></div><div id="mainChart" class="chart pt-3">
-          <div class="bar-wrap"><div class="font-bold">年度框架</div><div class="bar-bg"><div class="bar-done" style="width:72.55%"></div></div><div class="font-black text-right">72.55%</div></div>
-          <div class="bar-wrap"><div class="font-bold">效果目标</div><div class="bar-bg"><div class="bar-done" style="width:91.11%"></div></div><div class="font-black text-right text-[#1f9d74]">91.11%</div></div>
-          <div class="bar-wrap"><div class="font-bold">品星目标</div><div class="bar-bg"><div class="bar-done orange" style="width:43.05%"></div></div><div class="font-black text-right text-[#df7b2a]">43.05%</div></div>
+      <div class="glass rounded-[30px] p-6 lg:col-span-3">
+        <div class="flex flex-wrap justify-between gap-4 items-center mb-4"><div><h3 class="text-2xl font-black">目标完成结构</h3><p class="text-[#69758a] mt-1">目标金额、已消耗与剩余缺口对比</p></div></div>
+        <div class="pt-3">
+          <div class="bar-wrap"><div class="font-bold">年度框架</div><div class="bar-bg"><div class="bar-done" style="width:72.76%"></div></div><div class="font-black text-right">72.76%</div></div>
+          <div class="bar-wrap"><div class="font-bold">效果目标</div><div class="bar-bg"><div class="bar-done" style="width:91.34%"></div></div><div class="font-black text-right text-[#1f9d74]">91.34%</div></div>
+          <div class="bar-wrap"><div class="font-bold">品星目标</div><div class="bar-bg"><div class="bar-done orange" style="width:43.24%"></div></div><div class="font-black text-right text-[#df7b2a]">43.24%</div></div>
           <div class="grid grid-cols-3 gap-3 mt-8 text-center">
-            <div class="rounded-2xl bg-[#fff8ec] p-4"><div class="text-[#69758a] text-xs">框架缺口</div><div class="font-black text-xl mt-1">4831.05 万</div></div>
-            <div class="rounded-2xl bg-[#effbf5] p-4"><div class="text-[#69758a] text-xs">效果缺口</div><div class="font-black text-xl mt-1">959.10 万</div></div>
-            <div class="rounded-2xl bg-[#fff4e8] p-4"><div class="text-[#69758a] text-xs">品星缺口</div><div class="font-black text-xl mt-1">3871.95 万</div></div>
+            <div class="rounded-2xl bg-[#fff8ec] p-4"><div class="text-[#69758a] text-xs">框架缺口</div><div class="font-black text-xl mt-1">4794.06 万</div></div>
+            <div class="rounded-2xl bg-[#effbf5] p-4"><div class="text-[#69758a] text-xs">效果缺口</div><div class="font-black text-xl mt-1">934.52 万</div></div>
+            <div class="rounded-2xl bg-[#fff4e8] p-4"><div class="text-[#69758a] text-xs">品星缺口</div><div class="font-black text-xl mt-1">3859.54 万</div></div>
           </div>
-        </div></div>
-      <div class="glass rounded-[30px] p-6 lg:col-span-2"><h3 class="text-2xl font-black">风险提示</h3><div class="space-y-4 mt-5"><div class="risk rounded-2xl p-4"><div class="font-bold flex gap-2"><span class="text-[#c95d55]">⚠️</span>年度框架</div><p class="text-sm mt-2 text-[#69758a]">按照当前每日消耗进度测算，年底框架目标金额可能存在无法达成的风险，建议及时调整投放计划。</p></div><div class="ok rounded-2xl p-4"><div class="font-bold flex gap-2"><span class="text-[#1f9d74]">✅</span>效果目标</div><p class="text-sm mt-2 text-[#69758a]">当前完成率 91.11%，整体进度较优，建议保持稳定投放节奏。</p></div><div class="warning rounded-2xl p-4"><div class="font-bold flex gap-2"><span class="text-[#df7b2a]">❗</span>品星目标</div><p class="text-sm mt-2 text-[#69758a]">当前品星消耗进度偏低，可能存在年底品星目标金额无法达标的风险，建议及时调整投放计划。</p></div></div></div>
+        </div>
+      </div>
+      <div class="glass rounded-[30px] p-6 lg:col-span-2">
+        <h3 class="text-2xl font-black">风险提示</h3>
+        <div class="space-y-4 mt-5">
+          <div class="risk rounded-2xl p-4"><div class="font-bold flex gap-2"><span class="text-[#c95d55]">⚠️</span>年度框架</div><p class="text-sm mt-2 text-[#69758a]">按照当前每日消耗进度测算，年底框架目标金额可能存在无法达成的风险，建议及时调整投放计划。</p></div>
+          <div class="ok rounded-2xl p-4"><div class="font-bold flex gap-2"><span class="text-[#1f9d74]">✅</span>效果目标</div><p class="text-sm mt-2 text-[#69758a]">当前完成率 91.34%，整体进度较优，建议保持稳定投放节奏。</p></div>
+          <div class="warning rounded-2xl p-4"><div class="font-bold flex gap-2"><span class="text-[#df7b2a]">❗</span>品星目标</div><p class="text-sm mt-2 text-[#69758a]">当前品星消耗进度偏低，可能存在年底品星目标金额无法达标的风险，建议及时调整投放计划。</p></div>
+        </div>
+      </div>
     </section>
 
-    <section class="grid grid-cols-1 md:grid-cols-4 gap-5 mt-6 mb-8"><div class="glass rounded-[26px] p-5"><div class="text-[#69758a]">门槛金额</div><div class="text-2xl font-black mt-2">5000 万</div></div><div class="glass rounded-[26px] p-5"><div class="text-[#69758a]">去年现金消耗</div><div class="text-2xl font-black mt-2">1.25 亿</div></div><div class="glass rounded-[26px] p-5"><div class="text-[#69758a]">去年效果现金消耗</div><div class="text-2xl font-black mt-2">9573.86 万</div></div><div class="glass rounded-[26px] p-5"><div class="text-[#69758a]">930 考核节点</div><div class="text-2xl font-black mt-2 text-[#c95d55]">未达标</div></div></section>
+    <section class="grid grid-cols-1 md:grid-cols-4 gap-5 mt-6 mb-8">
+      <div class="glass rounded-[26px] p-5"><div class="text-[#69758a]">门槛金额</div><div class="text-2xl font-black mt-2">5000.00 万</div></div>
+      <div class="glass rounded-[26px] p-5"><div class="text-[#69758a]">去年现金消耗</div><div class="text-2xl font-black mt-2">1.25 亿</div></div>
+      <div class="glass rounded-[26px] p-5"><div class="text-[#69758a]">去年效果现金消耗</div><div class="text-2xl font-black mt-2">9573.86 万</div></div>
+      <div class="glass rounded-[26px] p-5"><div class="text-[#69758a]">930 考核节点</div><div class="text-2xl font-black mt-2 text-[#c95d55]">未达标</div></div>
+    </section>
 
     <footer class="text-center text-sm text-[#69758a] pb-6">本页面根据政策完成进度数据生成；用于客户同步查看年度框架达成状态。数据口径以源系统统计为准。</footer>
   </main>
-  <script>
-    const amountData=[{name:'年度框架',target:176000000,done:127689468.65,rate:72.55},{name:'效果目标',target:108000000,done:98408963.57,rate:91.11},{name:'品星目标',target:68000000,done:29280505.08,rate:43.05}];
-    document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}));
-  </script>
-
 
 </body></html>
