@@ -187,17 +187,6 @@
       "status": "active",
       "updated_at": "2026-10-19T10:50:39+08:00",
       "created_at": "2026-10-19T10:50:39+08:00"
-    },
-    {
-      "name": "Xingtuhouseinsight",
-      "slug": "xingtuhouseinsight",
-      "source_url": "https://xingtuhouseinsight.aime-site.bytedance.net/",
-      "directory": "projects/xingtuhouseinsight/",
-      "public_url": "https://lyhswxlbb-byte.github.io/eatfish/projects/xingtuhouseinsight/",
-      "owner": "liuyinghong.22",
-      "status": "active",
-      "updated_at": "2026-10-19T14:04:46+08:00",
-      "created_at": "2026-10-19T10:52:46+08:00"
     }
   ]
 }
