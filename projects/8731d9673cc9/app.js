@@ -56,6 +56,38 @@
     if (keyword.trim()) p.push(`搜索：${keyword.trim()}`);
     return p.length ? p.join(' / ') : '全部明星';
   }
+  function bandValue(v, fallback = '-') {
+    return v || fallback;
+  }
+  function scopedStats(list) {
+    const modeMap = new Map();
+    const starMap = new Map();
+    list.forEach(item => {
+      const mode = item.celebrity_mode || '未标注';
+      const modeEntry = modeMap.get(mode) || { mode, materials: 0, starSet: new Set(), cost: bandValue(item.ranges?.cash_cost), orders: bandValue(item.ranges?.orders) };
+      modeEntry.materials += 1;
+      (item.star_names_list || String(item.star_names_text || '').split('、')).filter(Boolean).forEach(star => modeEntry.starSet.add(star));
+      modeMap.set(mode, modeEntry);
+      (item.star_names_list || String(item.star_names_text || '').split('、')).filter(Boolean).forEach(star => {
+        const entry = starMap.get(star) || { name: star, materials: 0, bestScore: -1, bestTitle: '', bestUrl: '', bestCategory: '', cost: item.ranges?.cash_cost || '-', orders: item.ranges?.orders || '-', mode };
+        entry.materials += 1;
+        if (score(item) > entry.bestScore) {
+          entry.bestScore = score(item);
+          entry.bestTitle = item.title || '';
+          entry.bestUrl = item.open_url || item.video_url || '';
+          entry.bestCategory = item.specific_cat || '';
+          entry.cost = item.ranges?.cash_cost || '-';
+          entry.orders = item.ranges?.orders || '-';
+          entry.mode = mode;
+        }
+        starMap.set(star, entry);
+      });
+    });
+    const modeSummary = Array.from(modeMap.values()).map(m => ({ ...m, starCount: m.starSet.size })).sort((a, b) => b.materials - a.materials);
+    const allStars = Array.from(starMap.values()).sort((a, b) => b.bestScore - a.bestScore || b.materials - a.materials);
+    const starRecommendations = allStars.slice(0, 10).map((s, i) => ({ ...s, rank: i + 1, reason: `当前筛选范围内代表性更强：覆盖 ${s.materials} 条素材，代表类目为「${s.bestCategory || '未标注'}」，适合优先复盘其明星识别、品类场景和商品承接方式。` }));
+    return { modeSummary, allStars, starRecommendations };
+  }
   function renderPeriodSelect() {
     if (!periodSelect) return;
     periodSelect.innerHTML = periods.slice().reverse().map(p => `<option value="${escapeHtml(p.key)}">${escapeHtml(p.label || `${p.start} 至 ${p.end}`)}</option>`).join('');
@@ -68,8 +100,8 @@
     renderChips(typeChips, types(), currentType, v => { currentType = v; render(); });
     if (ruleText) ruleText.textContent = '';
   }
-  function modeCards() {
-    const modes = currentData().topConclusion?.modeSummary || [];
+  function modeCards(stats) {
+    const modes = stats.modeSummary || [];
     return modes.map((m, idx) => {
       const why = m.mode === '单人明星'
         ? `单人明星整体更适合做家居类信任锚点：全量池中有 ${m.starCount || '-'} 位明星、${m.materials || '-'} 条素材，素材记忆点集中，更容易把“明星同款/明星推荐”落到一个具体商品卖点。`
@@ -78,19 +110,21 @@
       return `<article class="material-insight-card level-${idx < 1 ? '重点放大' : '稳定补量'}"><div class="insight-rank">#${idx + 1}｜${idx === 0 ? '当前更强' : '补充策略'}</div><h3>${escapeHtml(m.mode)}</h3><div class="insight-metrics"><span><b>${escapeHtml(m.materials)}</b>全量素材</span><span><b>${escapeHtml(m.starCount)}</b>覆盖明星</span><span><b>${escapeHtml(m.cost)}</b>消耗区间</span><span><b>${escapeHtml(m.orders)}</b>订单区间</span></div><p><strong>结论：</strong>${highlight(why)}</p><p class="replicate"><strong>怎么复刻：</strong>${highlight(copy)}</p></article>`;
     }).join('');
   }
-  function renderAllStars() {
-    const all = currentData().allStars || [];
+  function renderAllStars(stats) {
+    const all = stats.allStars || [];
     return all.map((s, i) => `<a class="star-chip ${i < 10 ? 'hot' : ''}" href="${escapeHtml(s.bestUrl || '#')}" target="_blank" rel="noreferrer"><b>${i + 1}</b>${escapeHtml(s.name)}<em>${escapeHtml(s.cost)}｜${escapeHtml(s.materials)}条</em></a>`).join('');
   }
-  function renderRecommendations() {
-    const recs = currentData().starRecommendations || [];
+  function renderRecommendations(stats) {
+    const recs = stats.starRecommendations || [];
     return recs.map(r => `<article class="material-insight-card"><div class="insight-rank">明星推荐 #${escapeHtml(r.rank)}</div><h3>${escapeHtml(r.name)}</h3><div class="insight-metrics"><span><b>${escapeHtml(r.cost)}</b>消耗区间</span><span><b>${escapeHtml(r.orders)}</b>订单区间</span><span><b>${escapeHtml(r.materials)}</b>素材条数</span><span><b>${escapeHtml(r.bestCategory || '-')}</b>代表类目</span></div><p><strong>为什么选：</strong>${highlight(r.reason)}</p><p><strong>做得好的视频：</strong><a href="${escapeHtml(r.bestUrl || '#')}" target="_blank" rel="noreferrer">${highlight(r.bestTitle || '打开代表视频')}</a></p></article>`).join('');
   }
   function renderConclusion(list) {
     const d = currentData();
-    const allStarCount = (d.allStars || []).length;
-    const winner = d.topConclusion?.modeSummary?.[0]?.mode || '暂无';
-    conclusion.innerHTML = `<div class="conclusion-head"><div><p class="eyebrow">${escapeHtml(scopeText())}</p><h2>${highlight(`全量明星池覆盖 ${allStarCount} 位明星，整体更推荐：${winner}`)}</h2></div><div class="qa-pill">${escapeHtml(d.label || `${d.start} 至 ${d.end}`)}</div></div><section class="material-insights"><div class="section-title"><p class="eyebrow">明星形式表现</p><h2>单人明星 vs 多位明星</h2></div><div class="material-insight-grid">${modeCards()}</div></section><section class="material-insights"><div class="section-title"><p class="eyebrow">明星推荐</p><h2>推荐明星与代表视频</h2></div><div class="material-insight-grid">${renderRecommendations()}</div></section><div class="mini-board"><div><h4>全量明星名单</h4><div class="all-stars-list">${renderAllStars()}</div></div></div>`;
+    const stats = scopedStats(list);
+    const allStarCount = stats.allStars.length;
+    const winner = stats.modeSummary?.[0]?.mode || '暂无';
+    const filterHint = currentCat === '全部' && currentSub === '全部' && currentType === '全部' && !keyword.trim() ? '全量明星池' : '当前筛选范围';
+    conclusion.innerHTML = `<div class="conclusion-head"><div><p class="eyebrow">${escapeHtml(scopeText())}</p><h2>${highlight(`${filterHint}覆盖 ${allStarCount} 位明星，整体更推荐：${winner}`)}</h2></div><div class="qa-pill">${escapeHtml(d.label || `${d.start} 至 ${d.end}`)}</div></div><section class="material-insights"><div class="section-title"><p class="eyebrow">明星形式表现</p><h2>单人明星 vs 多位明星</h2></div><div class="material-insight-grid">${modeCards(stats) || '<div class="empty">当前筛选下暂无明星形式数据</div>'}</div></section><section class="material-insights"><div class="section-title"><p class="eyebrow">明星推荐</p><h2>推荐明星与代表视频</h2></div><div class="material-insight-grid">${renderRecommendations(stats) || '<div class="empty">当前筛选下暂无推荐明星</div>'}</div></section><div class="mini-board"><div><h4>当前筛选明星名单</h4><div class="all-stars-list">${renderAllStars(stats) || '<span class="empty">当前筛选下暂无明星</span>'}</div></div></div>`;
   }
   function detailRows(item) {
     return (item.breakdownRows || []).map(r => `<div class="analysis-row deep-row"><b>${escapeHtml(r.module)}</b><p>${highlight(r.detail)}</p>${r.evidence ? `<em>${highlight(r.evidence)}</em>` : ''}</div>`).join('');
