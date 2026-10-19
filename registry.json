@@ -165,6 +165,17 @@
       "status": "active",
       "updated_at": "2026-10-19T10:46:54+08:00",
       "created_at": "2026-10-19T10:46:54+08:00"
+    },
+    {
+      "name": "Bedinsight",
+      "slug": "bedinsight",
+      "source_url": "https://bedinsight.aime-site.bytedance.net/",
+      "directory": "projects/bedinsight/",
+      "public_url": "https://lyhswxlbb-byte.github.io/eatfish/projects/bedinsight/",
+      "owner": "liuyinghong.22",
+      "status": "active",
+      "updated_at": "2026-10-19T10:48:57+08:00",
+      "created_at": "2026-10-19T10:48:57+08:00"
     }
   ]
 }
