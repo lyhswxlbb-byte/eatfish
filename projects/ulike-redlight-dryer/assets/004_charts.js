@@ -117,13 +117,13 @@ const chartFns = {
     ];
     c.setOption({
       tooltip:{show:false},
-      series:[{type:'funnel',left:'8%',right:'8%',top:20,bottom:20,minSize:'28%',
-        label:{formatter:'{b}  {c}%',fontFamily:FONT,fontSize:12,color:'#FBF8F1',fontWeight:600},
+      series:[{type:'funnel',left:'4%',right:'30%',top:20,bottom:20,minSize:'28%',
+        label:{formatter:'{b}\n{c}%',fontFamily:FONT,fontSize:11.5,color:'#FBF8F1',fontWeight:600},
         labelLine:{show:false},
         itemStyle:{borderColor:'#F5F0E6',borderWidth:2},
         data:data.map((d,i)=>({name:d.name,value:d.v,
           itemStyle:{color:[C.teal2,C.teal,C.gold,C.red][i]}}))}],
-      graphic:data.map((d,i)=>({type:'text',right:10,top:34+i*58,style:{text:d.r,font:'10.5px '+FONT,fill:'#6E6A5E',textAlign:'right'}}))
+      graphic:data.map((d,i)=>({type:'text',right:8,top:36+i*60,style:{text:d.r,font:'11px '+FONT,fill:'#6E6A5E',textAlign:'right'}}))
     });
     return c;
   }
