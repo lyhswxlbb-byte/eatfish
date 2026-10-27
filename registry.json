@@ -198,6 +198,17 @@
       "status": "active",
       "updated_at": "2026-10-27T16:23:23+08:00",
       "created_at": "2026-10-27T16:17:01+08:00"
+    },
+    {
+      "name": "Bytedance",
+      "slug": "bytedance",
+      "source_url": "https://bytedance.larkoffice.com/docx/UraHdcD3OopFKIx8YaEcTQBSnmb/",
+      "directory": "projects/bytedance/",
+      "public_url": "https://lyhswxlbb-byte.github.io/eatfish/projects/bytedance/",
+      "owner": "liushuai.shuai",
+      "status": "active",
+      "updated_at": "2026-10-27T20:45:08+08:00",
+      "created_at": "2026-10-27T20:45:08+08:00"
     }
   ]
 }
